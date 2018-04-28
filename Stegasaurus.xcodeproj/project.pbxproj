@@ -1,0 +1,589 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4FCA9B8B2094FEAE00BA8A96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA9B8A2094FEAE00BA8A96 /* AppDelegate.swift */; };
+		4FCA9B8D2094FEAE00BA8A96 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA9B8C2094FEAE00BA8A96 /* ViewController.swift */; };
+		4FCA9B902094FEAE00BA8A96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FCA9B8E2094FEAE00BA8A96 /* Main.storyboard */; };
+		4FCA9B922094FEB000BA8A96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FCA9B912094FEB000BA8A96 /* Assets.xcassets */; };
+		4FCA9B952094FEB000BA8A96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FCA9B932094FEB000BA8A96 /* LaunchScreen.storyboard */; };
+		4FCA9BA02094FEB000BA8A96 /* StegasaurusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA9B9F2094FEB000BA8A96 /* StegasaurusTests.swift */; };
+		4FCA9BAB2094FEB000BA8A96 /* StegasaurusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA9BAA2094FEB000BA8A96 /* StegasaurusUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4FCA9B9C2094FEB000BA8A96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4FCA9B7F2094FEAE00BA8A96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4FCA9B862094FEAE00BA8A96;
+			remoteInfo = Stegasaurus;
+		};
+		4FCA9BA72094FEB000BA8A96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4FCA9B7F2094FEAE00BA8A96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4FCA9B862094FEAE00BA8A96;
+			remoteInfo = Stegasaurus;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4FCA9B872094FEAE00BA8A96 /* Stegasaurus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stegasaurus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FCA9B8A2094FEAE00BA8A96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4FCA9B8C2094FEAE00BA8A96 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4FCA9B8F2094FEAE00BA8A96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4FCA9B912094FEB000BA8A96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4FCA9B942094FEB000BA8A96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4FCA9B962094FEB000BA8A96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FCA9B9B2094FEB000BA8A96 /* StegasaurusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StegasaurusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FCA9B9F2094FEB000BA8A96 /* StegasaurusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StegasaurusTests.swift; sourceTree = "<group>"; };
+		4FCA9BA12094FEB000BA8A96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FCA9BA62094FEB000BA8A96 /* StegasaurusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StegasaurusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FCA9BAA2094FEB000BA8A96 /* StegasaurusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StegasaurusUITests.swift; sourceTree = "<group>"; };
+		4FCA9BAC2094FEB000BA8A96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4FCA9B842094FEAE00BA8A96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FCA9B982094FEB000BA8A96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FCA9BA32094FEB000BA8A96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4FCA9B7E2094FEAE00BA8A96 = {
+			isa = PBXGroup;
+			children = (
+				4FCA9B892094FEAE00BA8A96 /* Stegasaurus */,
+				4FCA9B9E2094FEB000BA8A96 /* StegasaurusTests */,
+				4FCA9BA92094FEB000BA8A96 /* StegasaurusUITests */,
+				4FCA9B882094FEAE00BA8A96 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4FCA9B882094FEAE00BA8A96 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4FCA9B872094FEAE00BA8A96 /* Stegasaurus.app */,
+				4FCA9B9B2094FEB000BA8A96 /* StegasaurusTests.xctest */,
+				4FCA9BA62094FEB000BA8A96 /* StegasaurusUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4FCA9B892094FEAE00BA8A96 /* Stegasaurus */ = {
+			isa = PBXGroup;
+			children = (
+				4FCA9B8A2094FEAE00BA8A96 /* AppDelegate.swift */,
+				4FCA9B8C2094FEAE00BA8A96 /* ViewController.swift */,
+				4FCA9B8E2094FEAE00BA8A96 /* Main.storyboard */,
+				4FCA9B912094FEB000BA8A96 /* Assets.xcassets */,
+				4FCA9B932094FEB000BA8A96 /* LaunchScreen.storyboard */,
+				4FCA9B962094FEB000BA8A96 /* Info.plist */,
+			);
+			path = Stegasaurus;
+			sourceTree = "<group>";
+		};
+		4FCA9B9E2094FEB000BA8A96 /* StegasaurusTests */ = {
+			isa = PBXGroup;
+			children = (
+				4FCA9B9F2094FEB000BA8A96 /* StegasaurusTests.swift */,
+				4FCA9BA12094FEB000BA8A96 /* Info.plist */,
+			);
+			path = StegasaurusTests;
+			sourceTree = "<group>";
+		};
+		4FCA9BA92094FEB000BA8A96 /* StegasaurusUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4FCA9BAA2094FEB000BA8A96 /* StegasaurusUITests.swift */,
+				4FCA9BAC2094FEB000BA8A96 /* Info.plist */,
+			);
+			path = StegasaurusUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4FCA9B862094FEAE00BA8A96 /* Stegasaurus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FCA9BAF2094FEB000BA8A96 /* Build configuration list for PBXNativeTarget "Stegasaurus" */;
+			buildPhases = (
+				4FCA9B832094FEAE00BA8A96 /* Sources */,
+				4FCA9B842094FEAE00BA8A96 /* Frameworks */,
+				4FCA9B852094FEAE00BA8A96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Stegasaurus;
+			productName = Stegasaurus;
+			productReference = 4FCA9B872094FEAE00BA8A96 /* Stegasaurus.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4FCA9B9A2094FEB000BA8A96 /* StegasaurusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FCA9BB22094FEB000BA8A96 /* Build configuration list for PBXNativeTarget "StegasaurusTests" */;
+			buildPhases = (
+				4FCA9B972094FEB000BA8A96 /* Sources */,
+				4FCA9B982094FEB000BA8A96 /* Frameworks */,
+				4FCA9B992094FEB000BA8A96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4FCA9B9D2094FEB000BA8A96 /* PBXTargetDependency */,
+			);
+			name = StegasaurusTests;
+			productName = StegasaurusTests;
+			productReference = 4FCA9B9B2094FEB000BA8A96 /* StegasaurusTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4FCA9BA52094FEB000BA8A96 /* StegasaurusUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FCA9BB52094FEB000BA8A96 /* Build configuration list for PBXNativeTarget "StegasaurusUITests" */;
+			buildPhases = (
+				4FCA9BA22094FEB000BA8A96 /* Sources */,
+				4FCA9BA32094FEB000BA8A96 /* Frameworks */,
+				4FCA9BA42094FEB000BA8A96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4FCA9BA82094FEB000BA8A96 /* PBXTargetDependency */,
+			);
+			name = StegasaurusUITests;
+			productName = StegasaurusUITests;
+			productReference = 4FCA9BA62094FEB000BA8A96 /* StegasaurusUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4FCA9B7F2094FEAE00BA8A96 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = AgrippaApps;
+				TargetAttributes = {
+					4FCA9B862094FEAE00BA8A96 = {
+						CreatedOnToolsVersion = 9.4;
+					};
+					4FCA9B9A2094FEB000BA8A96 = {
+						CreatedOnToolsVersion = 9.4;
+						TestTargetID = 4FCA9B862094FEAE00BA8A96;
+					};
+					4FCA9BA52094FEB000BA8A96 = {
+						CreatedOnToolsVersion = 9.4;
+						TestTargetID = 4FCA9B862094FEAE00BA8A96;
+					};
+				};
+			};
+			buildConfigurationList = 4FCA9B822094FEAE00BA8A96 /* Build configuration list for PBXProject "Stegasaurus" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4FCA9B7E2094FEAE00BA8A96;
+			productRefGroup = 4FCA9B882094FEAE00BA8A96 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4FCA9B862094FEAE00BA8A96 /* Stegasaurus */,
+				4FCA9B9A2094FEB000BA8A96 /* StegasaurusTests */,
+				4FCA9BA52094FEB000BA8A96 /* StegasaurusUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4FCA9B852094FEAE00BA8A96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FCA9B952094FEB000BA8A96 /* LaunchScreen.storyboard in Resources */,
+				4FCA9B922094FEB000BA8A96 /* Assets.xcassets in Resources */,
+				4FCA9B902094FEAE00BA8A96 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FCA9B992094FEB000BA8A96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FCA9BA42094FEB000BA8A96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4FCA9B832094FEAE00BA8A96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FCA9B8D2094FEAE00BA8A96 /* ViewController.swift in Sources */,
+				4FCA9B8B2094FEAE00BA8A96 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FCA9B972094FEB000BA8A96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FCA9BA02094FEB000BA8A96 /* StegasaurusTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FCA9BA22094FEB000BA8A96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FCA9BAB2094FEB000BA8A96 /* StegasaurusUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4FCA9B9D2094FEB000BA8A96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4FCA9B862094FEAE00BA8A96 /* Stegasaurus */;
+			targetProxy = 4FCA9B9C2094FEB000BA8A96 /* PBXContainerItemProxy */;
+		};
+		4FCA9BA82094FEB000BA8A96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4FCA9B862094FEAE00BA8A96 /* Stegasaurus */;
+			targetProxy = 4FCA9BA72094FEB000BA8A96 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4FCA9B8E2094FEAE00BA8A96 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4FCA9B8F2094FEAE00BA8A96 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4FCA9B932094FEB000BA8A96 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4FCA9B942094FEB000BA8A96 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4FCA9BAD2094FEB000BA8A96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4FCA9BAE2094FEB000BA8A96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4FCA9BB02094FEB000BA8A96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5CY5UTYJH5;
+				INFOPLIST_FILE = Stegasaurus/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.AgrippaApps.Stegasaurus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4FCA9BB12094FEB000BA8A96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5CY5UTYJH5;
+				INFOPLIST_FILE = Stegasaurus/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.AgrippaApps.Stegasaurus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4FCA9BB32094FEB000BA8A96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5CY5UTYJH5;
+				INFOPLIST_FILE = StegasaurusTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.AgrippaApps.StegasaurusTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stegasaurus.app/Stegasaurus";
+			};
+			name = Debug;
+		};
+		4FCA9BB42094FEB000BA8A96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5CY5UTYJH5;
+				INFOPLIST_FILE = StegasaurusTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.AgrippaApps.StegasaurusTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stegasaurus.app/Stegasaurus";
+			};
+			name = Release;
+		};
+		4FCA9BB62094FEB000BA8A96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5CY5UTYJH5;
+				INFOPLIST_FILE = StegasaurusUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.AgrippaApps.StegasaurusUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Stegasaurus;
+			};
+			name = Debug;
+		};
+		4FCA9BB72094FEB000BA8A96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5CY5UTYJH5;
+				INFOPLIST_FILE = StegasaurusUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.AgrippaApps.StegasaurusUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Stegasaurus;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4FCA9B822094FEAE00BA8A96 /* Build configuration list for PBXProject "Stegasaurus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FCA9BAD2094FEB000BA8A96 /* Debug */,
+				4FCA9BAE2094FEB000BA8A96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4FCA9BAF2094FEB000BA8A96 /* Build configuration list for PBXNativeTarget "Stegasaurus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FCA9BB02094FEB000BA8A96 /* Debug */,
+				4FCA9BB12094FEB000BA8A96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4FCA9BB22094FEB000BA8A96 /* Build configuration list for PBXNativeTarget "StegasaurusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FCA9BB32094FEB000BA8A96 /* Debug */,
+				4FCA9BB42094FEB000BA8A96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4FCA9BB52094FEB000BA8A96 /* Build configuration list for PBXNativeTarget "StegasaurusUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FCA9BB62094FEB000BA8A96 /* Debug */,
+				4FCA9BB72094FEB000BA8A96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4FCA9B7F2094FEAE00BA8A96 /* Project object */;
+}
