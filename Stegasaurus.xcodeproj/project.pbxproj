@@ -14,6 +14,7 @@
 		4FCA9B952094FEB000BA8A96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FCA9B932094FEB000BA8A96 /* LaunchScreen.storyboard */; };
 		4FCA9BA02094FEB000BA8A96 /* StegasaurusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA9B9F2094FEB000BA8A96 /* StegasaurusTests.swift */; };
 		4FCA9BAB2094FEB000BA8A96 /* StegasaurusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA9BAA2094FEB000BA8A96 /* StegasaurusUITests.swift */; };
+		4FCA9BB92094FED700BA8A96 /* Picto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA9BB82094FED700BA8A96 /* Picto.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		4FCA9BA62094FEB000BA8A96 /* StegasaurusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StegasaurusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FCA9BAA2094FEB000BA8A96 /* StegasaurusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StegasaurusUITests.swift; sourceTree = "<group>"; };
 		4FCA9BAC2094FEB000BA8A96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FCA9BB82094FED700BA8A96 /* Picto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				4FCA9B8A2094FEAE00BA8A96 /* AppDelegate.swift */,
 				4FCA9B8C2094FEAE00BA8A96 /* ViewController.swift */,
+				4FCA9BB82094FED700BA8A96 /* Picto.swift */,
 				4FCA9B8E2094FEAE00BA8A96 /* Main.storyboard */,
 				4FCA9B912094FEB000BA8A96 /* Assets.xcassets */,
 				4FCA9B932094FEB000BA8A96 /* LaunchScreen.storyboard */,
@@ -258,6 +261,7 @@
 			files = (
 				4FCA9B8D2094FEAE00BA8A96 /* ViewController.swift in Sources */,
 				4FCA9B8B2094FEAE00BA8A96 /* AppDelegate.swift in Sources */,
+				4FCA9BB92094FED700BA8A96 /* Picto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
