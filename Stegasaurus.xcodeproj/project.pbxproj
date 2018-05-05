@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F21D812209E69E60086C8DD /* STEGAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F21D811209E69E60086C8DD /* STEGAlert.swift */; };
 		4FB23091209A937300DD7581 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB23090209A937300DD7581 /* StartViewController.swift */; };
 		4FB23093209A937E00DD7581 /* FinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB23092209A937E00DD7581 /* FinishedViewController.swift */; };
 		4FCA9B8B2094FEAE00BA8A96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA9B8A2094FEAE00BA8A96 /* AppDelegate.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F21D811209E69E60086C8DD /* STEGAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STEGAlert.swift; sourceTree = "<group>"; };
 		4FB23090209A937300DD7581 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		4FB23092209A937E00DD7581 /* FinishedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedViewController.swift; sourceTree = "<group>"; };
 		4FCA9B872094FEAE00BA8A96 /* Stegasaurus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stegasaurus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +110,7 @@
 				4FCA9B8C2094FEAE00BA8A96 /* ViewController.swift */,
 				4FB23092209A937E00DD7581 /* FinishedViewController.swift */,
 				4FCA9BB82094FED700BA8A96 /* Picto.swift */,
+				4F21D811209E69E60086C8DD /* STEGAlert.swift */,
 				4FCA9B8E2094FEAE00BA8A96 /* Main.storyboard */,
 				4FCA9B912094FEB000BA8A96 /* Assets.xcassets */,
 				4FCA9B932094FEB000BA8A96 /* LaunchScreen.storyboard */,
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FCA9B8D2094FEAE00BA8A96 /* ViewController.swift in Sources */,
+				4F21D812209E69E60086C8DD /* STEGAlert.swift in Sources */,
 				4FB23091209A937300DD7581 /* StartViewController.swift in Sources */,
 				4FCA9B8B2094FEAE00BA8A96 /* AppDelegate.swift in Sources */,
 				4FCA9BB92094FED700BA8A96 /* Picto.swift in Sources */,

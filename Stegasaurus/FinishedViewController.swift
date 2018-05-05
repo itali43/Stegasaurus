@@ -10,7 +10,7 @@ import UIKit
 
 class FinishedViewController: UIViewController {
 
-    
+    var passedImage: UIImage = #imageLiteral(resourceName: "Stegasaurus")
     @IBOutlet weak var finishedImage: UIImageView!
     
     @IBOutlet weak var copyBTN: UIButton!
@@ -22,6 +22,9 @@ class FinishedViewController: UIViewController {
     }
     @IBOutlet weak var sendBTN: UIButton!
     @IBAction func sendAction(_ sender: Any) {
+            let vc = UIActivityViewController(activityItems: [passedImage], applicationActivities: [])
+            present(vc, animated: true)
+
     }
     
     
@@ -30,6 +33,8 @@ class FinishedViewController: UIViewController {
         let stegaImage = UIImageView(image: #imageLiteral(resourceName: "albinoStegasaurus"))
         stegaImage.contentMode = .scaleAspectFit
         self.navigationItem.titleView = stegaImage
+        finishedImage.image = passedImage
+        finishedImage.contentMode = .scaleAspectFit
 
         // Do any additional setup after loading the view.
     }

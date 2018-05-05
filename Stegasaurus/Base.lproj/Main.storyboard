@@ -225,6 +225,9 @@
                                 <state key="normal" title="Paste">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="pasteAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GYF-TB-VJb"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -261,6 +264,8 @@
                         <outlet property="chooseImageButton" destination="Csg-HW-fBM" id="pzh-YX-oa4"/>
                         <outlet property="doneButton" destination="XgY-KB-QAm" id="kha-Qf-iwq"/>
                         <outlet property="imageView" destination="6ic-FE-pyu" id="vYf-zL-x6e"/>
+                        <outlet property="pasteBTN" destination="NXu-a2-wiA" id="zt7-iw-WEU"/>
+                        <outlet property="txnTF" destination="8fs-pK-aQi" id="ptj-Wg-OoK"/>
                         <segue destination="ECu-7O-fcK" kind="show" identifier="toFinished" id="ise-7h-Yf3"/>
                     </connections>
                 </viewController>
@@ -296,7 +301,7 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ILx-1z-cjc">
                                 <rect key="frame" x="30" y="210" width="315" height="240"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="999" constant="240" id="EdH-rh-lYD"/>
                                 </constraints>
