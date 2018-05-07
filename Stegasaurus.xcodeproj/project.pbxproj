@@ -18,6 +18,7 @@
 		4FCA9BA02094FEB000BA8A96 /* StegasaurusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA9B9F2094FEB000BA8A96 /* StegasaurusTests.swift */; };
 		4FCA9BAB2094FEB000BA8A96 /* StegasaurusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA9BAA2094FEB000BA8A96 /* StegasaurusUITests.swift */; };
 		4FCA9BB92094FED700BA8A96 /* Picto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA9BB82094FED700BA8A96 /* Picto.swift */; };
+		4FD1C5B420A0E68200E45947 /* PictographImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD1C5B320A0E68200E45947 /* PictographImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		4FCA9BAA2094FEB000BA8A96 /* StegasaurusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StegasaurusUITests.swift; sourceTree = "<group>"; };
 		4FCA9BAC2094FEB000BA8A96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FCA9BB82094FED700BA8A96 /* Picto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picto.swift; sourceTree = "<group>"; };
+		4FD1C5B320A0E68200E45947 /* PictographImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictographImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				4FB23092209A937E00DD7581 /* FinishedViewController.swift */,
 				4FCA9BB82094FED700BA8A96 /* Picto.swift */,
 				4F21D811209E69E60086C8DD /* STEGAlert.swift */,
+				4FD1C5B320A0E68200E45947 /* PictographImage.swift */,
 				4FCA9B8E2094FEAE00BA8A96 /* Main.storyboard */,
 				4FCA9B912094FEB000BA8A96 /* Assets.xcassets */,
 				4FCA9B932094FEB000BA8A96 /* LaunchScreen.storyboard */,
@@ -274,6 +277,7 @@
 				4FCA9B8B2094FEAE00BA8A96 /* AppDelegate.swift in Sources */,
 				4FCA9BB92094FED700BA8A96 /* Picto.swift in Sources */,
 				4FB23093209A937E00DD7581 /* FinishedViewController.swift in Sources */,
+				4FD1C5B420A0E68200E45947 /* PictographImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
