@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4F21D812209E69E60086C8DD /* STEGAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F21D811209E69E60086C8DD /* STEGAlert.swift */; };
+		4F560643209E775000A1E001 /* PictographImageCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F56063D209E775000A1E001 /* PictographImageCoder.m */; };
+		4F560644209E775000A1E001 /* PictographImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F560640209E775000A1E001 /* PictographImage+Resize.m */; };
+		4F560645209E775000A1E001 /* PictographImage+Reconciliation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F560641209E775000A1E001 /* PictographImage+Reconciliation.m */; };
 		4FB23091209A937300DD7581 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB23090209A937300DD7581 /* StartViewController.swift */; };
 		4FB23093209A937E00DD7581 /* FinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB23092209A937E00DD7581 /* FinishedViewController.swift */; };
 		4FCA9B8B2094FEAE00BA8A96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA9B8A2094FEAE00BA8A96 /* AppDelegate.swift */; };
@@ -39,6 +42,15 @@
 
 /* Begin PBXFileReference section */
 		4F21D811209E69E60086C8DD /* STEGAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STEGAlert.swift; sourceTree = "<group>"; };
+		4F56063B209E774F00A1E001 /* Stegasaurus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Stegasaurus-Bridging-Header.h"; sourceTree = "<group>"; };
+		4F56063C209E775000A1E001 /* PictographImageCoderProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictographImageCoderProgressDelegate.h; sourceTree = "<group>"; };
+		4F56063D209E775000A1E001 /* PictographImageCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictographImageCoder.m; sourceTree = "<group>"; };
+		4F56063E209E775000A1E001 /* PictographImage+Reconciliation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PictographImage+Reconciliation.h"; sourceTree = "<group>"; };
+		4F56063F209E775000A1E001 /* PictographImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PictographImage+Resize.h"; sourceTree = "<group>"; };
+		4F560640209E775000A1E001 /* PictographImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PictographImage+Resize.m"; sourceTree = "<group>"; };
+		4F560641209E775000A1E001 /* PictographImage+Reconciliation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PictographImage+Reconciliation.m"; sourceTree = "<group>"; };
+		4F560642209E775000A1E001 /* PictographImageCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictographImageCoder.h; sourceTree = "<group>"; };
+		4F560647209E776E00A1E001 /* Global.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
 		4FB23090209A937300DD7581 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		4FB23092209A937E00DD7581 /* FinishedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedViewController.swift; sourceTree = "<group>"; };
 		4FCA9B872094FEAE00BA8A96 /* Stegasaurus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stegasaurus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +94,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F560646209E775600A1E001 /* OBJC */ = {
+			isa = PBXGroup;
+			children = (
+				4F560647209E776E00A1E001 /* Global.h */,
+				4F56063E209E775000A1E001 /* PictographImage+Reconciliation.h */,
+				4F560641209E775000A1E001 /* PictographImage+Reconciliation.m */,
+				4F56063F209E775000A1E001 /* PictographImage+Resize.h */,
+				4F560640209E775000A1E001 /* PictographImage+Resize.m */,
+				4F560642209E775000A1E001 /* PictographImageCoder.h */,
+				4F56063D209E775000A1E001 /* PictographImageCoder.m */,
+				4F56063C209E775000A1E001 /* PictographImageCoderProgressDelegate.h */,
+			);
+			path = OBJC;
+			sourceTree = "<group>";
+		};
 		4FCA9B7E2094FEAE00BA8A96 = {
 			isa = PBXGroup;
 			children = (
@@ -110,11 +137,13 @@
 				4FCA9B8C2094FEAE00BA8A96 /* ViewController.swift */,
 				4FB23092209A937E00DD7581 /* FinishedViewController.swift */,
 				4FCA9BB82094FED700BA8A96 /* Picto.swift */,
+				4F560646209E775600A1E001 /* OBJC */,
 				4F21D811209E69E60086C8DD /* STEGAlert.swift */,
 				4FCA9B8E2094FEAE00BA8A96 /* Main.storyboard */,
 				4FCA9B912094FEB000BA8A96 /* Assets.xcassets */,
 				4FCA9B932094FEB000BA8A96 /* LaunchScreen.storyboard */,
 				4FCA9B962094FEB000BA8A96 /* Info.plist */,
+				4F56063B209E774F00A1E001 /* Stegasaurus-Bridging-Header.h */,
 			);
 			path = Stegasaurus;
 			sourceTree = "<group>";
@@ -205,6 +234,7 @@
 				TargetAttributes = {
 					4FCA9B862094FEAE00BA8A96 = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 0940;
 					};
 					4FCA9B9A2094FEB000BA8A96 = {
 						CreatedOnToolsVersion = 9.4;
@@ -269,10 +299,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FCA9B8D2094FEAE00BA8A96 /* ViewController.swift in Sources */,
+				4F560645209E775000A1E001 /* PictographImage+Reconciliation.m in Sources */,
 				4F21D812209E69E60086C8DD /* STEGAlert.swift in Sources */,
 				4FB23091209A937300DD7581 /* StartViewController.swift in Sources */,
 				4FCA9B8B2094FEAE00BA8A96 /* AppDelegate.swift in Sources */,
+				4F560644209E775000A1E001 /* PictographImage+Resize.m in Sources */,
 				4FCA9BB92094FED700BA8A96 /* Picto.swift in Sources */,
+				4F560643209E775000A1E001 /* PictographImageCoder.m in Sources */,
 				4FB23093209A937E00DD7581 /* FinishedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,6 +479,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CY5UTYJH5;
 				INFOPLIST_FILE = Stegasaurus/Info.plist;
@@ -455,6 +489,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.AgrippaApps.Stegasaurus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Stegasaurus/Stegasaurus-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -464,6 +500,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CY5UTYJH5;
 				INFOPLIST_FILE = Stegasaurus/Info.plist;
@@ -473,6 +510,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.AgrippaApps.Stegasaurus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Stegasaurus/Stegasaurus-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
