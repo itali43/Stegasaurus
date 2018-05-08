@@ -7,8 +7,15 @@
 //
 
 import Foundation
+import CoreGraphics
+import UIKit
+import RNCryptor
+
 
 class Picto {
+    static var pictographErrorDomain = "com.agrippa.Stegasaurus.ErrorDomain"
+
+    
     let bitCountForCharacter = 8
     let bitsChangedPerPixel = 2
     let bitCountForInfo = 16
@@ -18,7 +25,7 @@ class Picto {
     let maxIntFor8Bits = 255
     let maxFloatFor8Bits = 255.0
     let blueComponentIndex = 2
-    let extraImageShrinkingFactor = 2
+    let extraImageShrinkingFactor: CGFloat = 2.0
     
     
     
@@ -51,7 +58,7 @@ class Picto {
         let first8PixelsBlueComponents = getBlueComponents(from: image, atX: 0, andY: 0, count: pixelCount(forBit: bitCountForInfo))
         for i in 0..<pixelCount(forBit: bitCountForInfo) {
             //Going through each color that contains information about the message
-            addLastBits(fromBlueComponent: first8PixelsBlueComponents[i], toArray: infoArrayInBits)
+            addLastBits(fromBlueComponent: first8PixelsBlueComponents![i], toArray: infoArrayInBits)
         }
         free(first8PixelsBlueComponents)
         let settingsBits: Int = long(fromBits: infoArrayInBits)
@@ -59,33 +66,42 @@ class Picto {
         /*
          NOTE: See function definiton for determineSettingsBitsForMessageData to see how this works
          */
+        
+//        enum PictographEncodingOptions : Int {
+//            case none = -1
+//            case unencryptedMessage
+//            case encryptedMessage
+//            case unencryptedImage
+//            case unencryptedMessageWithImage
+//            case encryptedMessageWithImage
+//        }
+//
+        
         switch settingsBits {
-        case PictographEncodingOptionsUnencryptedMessage:
+        case PictographEncodingOptions.unencryptedMessage.rawValue:
             messageIsEncrypted = false
-        case PictographEncodingOptionsEncryptedMessage:
+        case PictographEncodingOptions.encryptedMessage.rawValue:
             messageIsEncrypted = true
             if (password == "") {
                 //The message is encrypted and the user has no password entered, alert user
                 let userInfo = [NSLocalizedDescriptionKey: "The image you provided is encrypted and you didn't provide a password. Please enter the password."]
-                error = NSError(domain: PictographErrorDomain, code: Int(NoPasswordProvidedError), userInfo: userInfo)
-                return
+                throw NSError(domain: Picto.pictographErrorDomain, code: PictographError.noPasswordProvidedError.rawValue, userInfo: userInfo)
             }
-        case PictographEncodingOptionsUnencryptedImage:
+        case PictographEncodingOptions.unencryptedImage.rawValue:
             break
-        case PictographEncodingOptionsUnencryptedMessageWithImage:
+        case PictographEncodingOptions.unencryptedMessageWithImage.rawValue:
             break
-        case PictographEncodingOptionsEncryptedMessageWithImage:
+        case PictographEncodingOptions.encryptedMessageWithImage.rawValue:
             messageIsEncrypted = true
             if (password == "") {
                 //The message is encrypted and the user has no password entered, alert user
                 let userInfo = [NSLocalizedDescriptionKey: "The image you provided is encrypted and you didn't provide a password. Please enter the password."]
-                error = NSError(domain: PictographErrorDomain, code: Int(NoPasswordProvidedError), userInfo: userInfo)
-                return
+                throw NSError(domain: Picto.pictographErrorDomain, code: PictographError.noPasswordProvidedError.rawValue, userInfo: userInfo)
             }
         default:
             //If there was an error, alert the user
             let userInfo = [NSLocalizedDescriptionKey: "The image you provided does not contain a hidden message."]
-            error = NSError(domain: PictographErrorDomain, code: Int(NoMessageInImageError), userInfo: userInfo)
+            throw NSError(domain: Picto.pictographErrorDomain, code: PictographError.noMessageInImageError.rawValue, userInfo: userInfo)
             return
         }
         //Sending the analytics
@@ -97,12 +113,13 @@ class Picto {
     
     
     func data(from image: PictographImage?, needsPassword isEncrypted: Bool, password: String?, hiddenMessageData: Data?, hiddenImageData: Data?) throws {
+        
         //Getting the size of the string
         var messageSizeArrayInBits = [AnyHashable]()
         let blueComponentsContainingSizeOfMessage = getBlueComponents(from: image, atX: pixelCount(forBit: bitCountForInfo), andY: 0, count: pixelCount(forBit: bitCountForHiddenDataSize))
         for i in 0..<pixelCount(forBit: bitCountForHiddenDataSize) {
             //Going through each color that contains the size of the message
-            addLastBits(fromBlueComponent: blueComponentsContainingSizeOfMessage[i], toArray: messageSizeArrayInBits)
+            addLastBits(fromBlueComponent: blueComponentsContainingSizeOfMessage![i], toArray: messageSizeArrayInBits)
         }
         free(blueComponentsContainingSizeOfMessage)
         let numberOfBitsNeededForMessage: Int = long(fromBits: messageSizeArrayInBits)
@@ -111,12 +128,12 @@ class Picto {
         let blueComponentsContainingSizeOfImage = getBlueComponents(from: image, atX: pixelCount(forBit: bitCountForInfo + bitCountForHiddenDataSize), andY: 0, count: pixelCount(forBit: bitCountForHiddenDataSize))
         for i in 0..<pixelCount(forBit: bitCountForHiddenDataSize) {
             //Going through each color that contains the size of the message
-            addLastBits(fromBlueComponent: blueComponentsContainingSizeOfImage[i], toArray: imageSizeArrayInBits)
+            addLastBits(fromBlueComponent: blueComponentsContainingSizeOfImage![i], toArray: imageSizeArrayInBits)
         }
         free(blueComponentsContainingSizeOfImage)
         let numberOfBitsNeededForImage: Int = long(fromBits: imageSizeArrayInBits)
         if numberOfBitsNeededForMessage > 0 {
-            hiddenMessageData = try? getDataFromPixles(withBitCountOffset: 0, from: image, numberOfBitsToGet: numberOfBitsNeededForMessage, totalBitsForLogging: (numberOfBitsNeededForMessage + numberOfBitsNeededForImage), isEncrypted: isEncrypted, withPassword: password, isMessage: true)
+            hiddenMessageData = try? getDataFromPixles(withBitCountOffset: 0, from: image!, numberOfBitsToGet: numberOfBitsNeededForMessage, totalBitsForLogging: (numberOfBitsNeededForMessage + numberOfBitsNeededForImage), isEncrypted: isEncrypted, withPassword: password, isMessage: true)
         }
         if numberOfBitsNeededForImage > 0 && error == nil {
             hiddenImageData = try? getDataFromPixles(withBitCountOffset: numberOfBitsNeededForMessage, from: image, numberOfBitsToGet: numberOfBitsNeededForImage, totalBitsForLogging: (numberOfBitsNeededForMessage + numberOfBitsNeededForImage), isEncrypted: isEncrypted, withPassword: password, isMessage: false)
@@ -223,19 +240,21 @@ class Picto {
     func encodeMessageData(_ messageData: Data, imageData: Data?, in image: PictographImage, encryptedWithPassword password: String) throws -> Data? {
         var messageDataToEncode: Data?
         let isEncrypted: Bool = !(password == "")
-        if isEncrypted && messageData {
+        let thereIsMessageData: Bool = !(messageData.count > 0)
+        
+        if isEncrypted && thereIsMessageData {
             //If the user wants to encrypt the string, encrypt it
+            // import RNCryptor via PODS
             messageDataToEncode = try? RNEncryptor.encryptData(messageData, withSettings: kRNCryptorAES256Settings, password: password)
             if error != nil {
                 return nil
             }
-        } else if messageData {
+        } else if messageData != nil {
             //No need to encrypt
             messageDataToEncode = messageData
         } else if isEncrypted {
             let userInfo = [NSLocalizedDescriptionKey: "A password was used but no message was sent. A message is needed if encryption is enabled."]
-            error = NSError(domain: PictographErrorDomain, code: Int(NoPasswordProvidedError), userInfo: userInfo)
-            return nil
+            throw NSError(domain: Picto.pictographErrorDomain, code: PictographError.noPasswordProvidedError.rawValue, userInfo: userInfo)
         }
         var bitsNeededForMessageData: Int = 0
         if messageDataToEncode != nil {
@@ -249,16 +268,18 @@ class Picto {
         let numberOfPixelsNeeded: Int = pixelCount(forBit: (bitCountForInfo + bitCountForHiddenDataSize + bitCountForHiddenDataSize + bitsNeededForAllData))
         if (image.getReconciledImageHeight() * image.getReconciledImageWidth()) <= numberOfPixelsNeeded {
             let userInfo = [NSLocalizedDescriptionKey: "Image was too small, please select a larger image."]
-            error = NSError(domain: PictographErrorDomain, code: Int(ImageTooSmallError), userInfo: userInfo)
+            throw NSError(domain: Picto.pictographErrorDomain, code: PictographError.imageTooSmallError.rawValue, userInfo: userInfo)
+            print("error image too small error")
+
             return nil
         }
         var arrayOfBits = [AnyHashable]()
         let settingsBit: Int = determineSettingsBits(forMessageData: messageDataToEncode, imageData: imageData, isEncrypted: isEncrypted)
-        arrayOfBits.append(contentsOf: binaryString(fromInteger: settingsBit, withSpaceFor: bitCountForInfo))
+        arrayOfBits.append(binaryString(fromInteger: settingsBit, withSpaceFor: bitCountForInfo) as! AnyHashable)
         //16 bits for future proofing
-        arrayOfBits.append(contentsOf: binaryString(fromInteger: bitsNeededForMessageData, withSpaceFor: bitCountForHiddenDataSize))
+        arrayOfBits.append(binaryString(fromInteger: bitsNeededForMessageData, withSpaceFor: bitCountForHiddenDataSize) as! AnyHashable)
         //64 bits for message size
-        arrayOfBits.append(contentsOf: binaryString(fromInteger: bitsNeededForImageData, withSpaceFor: bitCountForHiddenDataSize))
+        arrayOfBits.append(binaryString(fromInteger: bitsNeededForImageData, withSpaceFor: bitCountForHiddenDataSize) as! AnyHashable)
         //64 bits for image size
         var arrayOfDataToEncode = [AnyHashable]()
         if messageDataToEncode != nil {
@@ -272,6 +293,7 @@ class Picto {
             }
         }
         for data: Data in arrayOfDataToEncode as? [Data] ?? [Data]() {
+            
             let bytes = data.bytes
             for charIndex in 0..<data.count {
                 let curChar = Int8(bytes[charIndex])
@@ -288,6 +310,11 @@ class Picto {
     
     func saveImageToGraphicsContextAndEncodeBits(in image: PictographImage?, arrayOfBits: [AnyHashable]?) -> Data? {
         //Right here we have all the bits that are needed to encode the data in the image
+        guard let imaged = image else {
+            print("no image here... save image to graphics context and encode bits it didn't work ")
+            return nil
+        }
+
         #if TARGET_OS_IPHONE
         image = rotatedUIImage(from: image)
         #endif
@@ -297,26 +324,15 @@ class Picto {
         let bitsPerComponent: size_t = 8
         let bytesPerRow: size_t = bytesPerPixel * (imageWidth ?? 0)
         let pixelBuffer = pixelBufferWithBlueComponentsChanged(from: image, arrayOfBits: arrayOfBits)
-        let editedBitmap = CGContext(data: pixelBuffer, width: imageWidth, height: imageHeight, bitsPerComponent: bitsPerComponent, bytesPerRow: bytesPerRow, space: colorspace, bitmapInfo: [.premultipliedLast, .byteOrder32Little])
+        let editedBitmap = CGContext(data: pixelBuffer, width: imageWidth!, height: imageHeight!, bitsPerComponent: bitsPerComponent, bytesPerRow: bytesPerRow, space: colorspace, bitmapInfo: CGBitmapInfo(rawValue: CGBitmapInfo.byteOrder32Little.rawValue | CGImageAlphaInfo.first.rawValue).rawValue)
+        //|| .byteOrder32Little.rawValue) ======    || CGBitmapInfo.alphaInfoMask.premultipliedLast
         //Getting the image from the bitmap
         var dataRepresentationOfModifiedImage: Data?
-        let outputImage = editedBitmap.makeImage()
+        let outputImage = editedBitmap?.makeImage()
         //CGImageRef to NSData
-        #if TARGET_OS_IPHONE
-        let encodedImage = UIImage(cgImage: outputImage)
+        let encodedImage = UIImage(cgImage: outputImage!)
         dataRepresentationOfModifiedImage = UIImagePNGRepresentation(encodedImage)
-        #else
-        let newImageData = CFDataCreateMutable(nil, 0)
-        let destination = CGImageDestinationCreateWithData(newImageData, kUTTypePNG, 1, nil)
-        CGImageDestinationAddImage(destination, outputImage, nil)
-        CGImageDestinationFinalize(destination)
-        dataRepresentationOfModifiedImage = newImageData as? Data
-        #endif
         //Freeing the memory
-        
-        CGContextRelease(editedBitmap)
-        CGImageRelease(outputImage)
-        free(pixelBuffer)
         return dataRepresentationOfModifiedImage
     }
     
@@ -337,10 +353,10 @@ class Picto {
                 break
             }
             //Get the current blue value, change out the last bits, and then put the new value in the buffer again
-            let currentBlueValue: UInt8 = pixelBuffer[i + blueComponentIndex]
+            let currentBlueValue: UInt8 = pixelBuffer![i + blueComponentIndex]
             let newBlueValue: UInt8 = newBlueComponentValue(from: currentBlueValue, encodeCounter: encodeCounter, arrayOfBits: arrayOfBits)
-            pixelBuffer[i + blueComponentIndex] = newBlueValue
-            DLog("Changing pixel value at index %i", (i / 4))
+            pixelBuffer![i + blueComponentIndex] = newBlueValue
+            print("Changing pixel value at index %i", (i / 4))
             if (i / 4) % oneHundredthStep == 0 && delegate != nil {
                 let percentDone = i / Float(numberOfPixelsNeeded * 4)
                 delegate().pictographImageCoderDidUpdateProgress(percentDone)
@@ -354,15 +370,14 @@ class Picto {
     
     
     //Gets the color that the specified pixel should be
-    
     func newBlueComponentValue(from currentBlueComponent: UInt8, encodeCounter: Int, arrayOfBits: [Any]?) -> UInt8 {
         //Changing the value of the blue byte
-        var arrayOfBitsFromBlue = binaryString(fromInteger: currentBlueComponent, withSpaceFor: bitCountForCharacter)
+        var arrayOfBitsFromBlue = binaryString(fromInteger: Int(currentBlueComponent), withSpaceFor: bitCountForCharacter)
         //Changing the least significant bits of the blue byte
-        arrayOfBitsFromBlue[6] = arrayOfBits[encodeCounter]
-        arrayOfBitsFromBlue[7] = arrayOfBits[encodeCounter + 1]
+        arrayOfBitsFromBlue![6] = arrayOfBits![encodeCounter]
+        arrayOfBitsFromBlue![7] = arrayOfBits![encodeCounter + 1]
         let newBlueLong: Int = long(fromBits: arrayOfBitsFromBlue)
-        return UInt8
+        return UInt8(UInt(newBlueLong))
     }
     
     // MARK: Helper methods used for hiding an image within another image
@@ -393,20 +408,33 @@ class Picto {
     */
     
     func determineSize(forHiding hiddenImage: PictographImage?, within image: PictographImage?, shrinkImageMore: Bool) -> CGSize {
-        let numberOfPixelsInMainImage: Int = image?.getReconciledImageWidth() * image?.getReconciledImageHeight()
+        
+        guard let hiddenPic = hiddenImage else {
+            print("no hidden image here... determining it didn't work ")
+            return CGSize(width: 0.0, height: 0.0)
+        }
+        guard let pic = image else {
+            print("no image here... determining it didn't work ")
+            return CGSize(width: 0.0, height: 0.0)
+        }
+        print("seems pic and hidden pic both exist (guards complete)")
+
+        
+        let numberOfPixelsInMainImage: Int = image!.getReconciledImageWidth() * image!.getReconciledImageHeight()
         var scaleFactor: CGFloat = 1
-        var hiddenImageSize = CGSize(width: hiddenImage?.getReconciledImageWidth() ?? 0.0 * scaleFactor, height: hiddenImage?.getReconciledImageHeight() ?? 0.0 * scaleFactor)
+        var hiddenImageSize = CGSize(width: hiddenImage?.getReconciledImageWidth() ?? Int(0.0 * scaleFactor), height: hiddenImage?.getReconciledImageHeight() ?? Int(0.0 * scaleFactor))
         var pixelsNeededForHiddenImage: Int = numberOfPixelsNeeded(toHideImageOf: hiddenImageSize)
         while pixelsNeededForHiddenImage >= numberOfPixelsInMainImage {
             //Cut the width and height of the image in half each time
             scaleFactor = scaleFactor / 2
-            hiddenImageSize = CGSize(width: hiddenImage?.getReconciledImageWidth() ?? 0.0 * scaleFactor, height: hiddenImage?.getReconciledImageHeight() ?? 0.0 * scaleFactor)
+            hiddenImageSize = CGSize(width: hiddenImage?.getReconciledImageWidth() ?? Int(0.0 * scaleFactor), height: hiddenImage?.getReconciledImageHeight() ?? Int(0.0 * scaleFactor))
             pixelsNeededForHiddenImage = numberOfPixelsNeeded(toHideImageOf: hiddenImageSize)
         }
         if shrinkImageMore {
             //Scale the image down again if the user wants faster encoding
+            print("shrinking more")
             scaleFactor = scaleFactor / extraImageShrinkingFactor
-            hiddenImageSize = CGSize(width: hiddenImage?.getReconciledImageWidth() ?? 0.0 * scaleFactor, height: hiddenImage?.getReconciledImageHeight() ?? 0.0 * scaleFactor)
+            hiddenImageSize = CGSize(width: hiddenImage?.getReconciledImageWidth() ?? Int(0.0 * scaleFactor), height: hiddenImage?.getReconciledImageHeight() ?? Int(0.0 * scaleFactor))
         }
         return hiddenImageSize
     }
@@ -433,7 +461,7 @@ class Picto {
     //Used the above link as information, but instead decided to use an int array and remove spacing
     func binaryString(fromInteger number: Int, withSpaceFor numberOfBits: Int) -> [Any]? {
         var bitArray = [AnyHashable]()
-        let binaryDigit: Int = 0
+        var binaryDigit: Int = 0
         var integer: Int = number
         while binaryDigit < numberOfBits {
             //Going through each binary digit
@@ -454,6 +482,7 @@ class Picto {
                 singleCharacterArrayInBits += "\(aCounter)"
             }
         }
+        
         let longRep: Int = strtol(singleCharacterArrayInBits.utf8CString, nil, 2)
         return longRep
     }
@@ -492,13 +521,17 @@ class Picto {
     //  pixelBuffer[i+3] is the alpha
     
     func getRawPixelData(for image: PictographImage?) -> UnsafeMutablePointer<UInt8>? {
+        guard let pic =  image else {
+            print("No image to get raw pixel data from")
+            return nil
+        }
         // First get the image into your data buffer
-        let imageRef = image?.getReconciledCGImageRef()
-        let width: Int? = image?.getReconciledImageWidth()
-        let height: Int? = image?.getReconciledImageHeight()
+        let imageRef = image!.getReconciledCGImageRef()
+        let width: Int = image!.getReconciledImageWidth() // crash risk
+        let height: Int = image!.getReconciledImageHeight()
         let colorSpace = CGColorSpaceCreateDeviceRGB()
-        let rawData = UInt8 as? [UInt8]
-        malloc(height, *, width, *, componentsPerPixel, *, sizeof, (, unsigned, char)
+        let rawData: UnsafeMutablePointer<UInt8>?
+//        malloc(height, *, width, *, componentsPerPixel, *, sizeof, (, unsigned, char)
         let bytesPerRow: Int = bytesPerPixel * (width ?? 0)
         let bitsPerComponent: Int = 8
         let context = CGContext(data: rawData, width: width, height: height, bitsPerComponent: bitsPerComponent, bytesPerRow: bytesPerRow, space: colorSpace, bitmapInfo: [.premultipliedLast, .byteOrder32Little])
@@ -559,3 +592,10 @@ class Picto {
     
     
 }// end picto
+
+enum PictographError : Int {
+    case imageTooSmallError
+    case passwordIncorrectError
+    case noPasswordProvidedError
+    case noMessageInImageError
+}

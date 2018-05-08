@@ -19,6 +19,9 @@
 		4FCA9BAB2094FEB000BA8A96 /* StegasaurusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA9BAA2094FEB000BA8A96 /* StegasaurusUITests.swift */; };
 		4FCA9BB92094FED700BA8A96 /* Picto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA9BB82094FED700BA8A96 /* Picto.swift */; };
 		4FD1C5B420A0E68200E45947 /* PictographImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD1C5B320A0E68200E45947 /* PictographImage.swift */; };
+		5C80987FC413FA35038913CD /* Pods_StegasaurusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0C4F479B6D2DAD470AEA14 /* Pods_StegasaurusUITests.framework */; };
+		86DBD78B561DF79CB203826A /* Pods_StegasaurusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04CDAE5957CB4B92C7417560 /* Pods_StegasaurusTests.framework */; };
+		E143128C5AFE05BB862CB1C8 /* Pods_Stegasaurus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25B7E1031AF1BEFEE73A5AC2 /* Pods_Stegasaurus.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +42,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04CDAE5957CB4B92C7417560 /* Pods_StegasaurusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StegasaurusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		131AC21ECEC6B5EB97D36981 /* Pods-StegasaurusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StegasaurusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StegasaurusTests/Pods-StegasaurusTests.debug.xcconfig"; sourceTree = "<group>"; };
+		25B7E1031AF1BEFEE73A5AC2 /* Pods_Stegasaurus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stegasaurus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BAC382DBC74CFC107A38DD4 /* Pods-StegasaurusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StegasaurusUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StegasaurusUITests/Pods-StegasaurusUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4DC746EB1F505F37ECA29E46 /* Pods-StegasaurusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StegasaurusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StegasaurusTests/Pods-StegasaurusTests.release.xcconfig"; sourceTree = "<group>"; };
 		4F21D811209E69E60086C8DD /* STEGAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STEGAlert.swift; sourceTree = "<group>"; };
 		4FB23090209A937300DD7581 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		4FB23092209A937E00DD7581 /* FinishedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +65,10 @@
 		4FCA9BAC2094FEB000BA8A96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FCA9BB82094FED700BA8A96 /* Picto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picto.swift; sourceTree = "<group>"; };
 		4FD1C5B320A0E68200E45947 /* PictographImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictographImage.swift; sourceTree = "<group>"; };
+		5531CBA7D8A6C86148BF7008 /* Pods-Stegasaurus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stegasaurus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stegasaurus/Pods-Stegasaurus.debug.xcconfig"; sourceTree = "<group>"; };
+		5D0C4F479B6D2DAD470AEA14 /* Pods_StegasaurusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StegasaurusUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84FEEDB86D9D55B2FC658D7F /* Pods-StegasaurusUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StegasaurusUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StegasaurusUITests/Pods-StegasaurusUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E327039FCA0868942185071E /* Pods-Stegasaurus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stegasaurus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stegasaurus/Pods-Stegasaurus.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E143128C5AFE05BB862CB1C8 /* Pods_Stegasaurus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86DBD78B561DF79CB203826A /* Pods_StegasaurusTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,12 +92,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C80987FC413FA35038913CD /* Pods_StegasaurusUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31459BC57B8146BE44C61A75 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5531CBA7D8A6C86148BF7008 /* Pods-Stegasaurus.debug.xcconfig */,
+				E327039FCA0868942185071E /* Pods-Stegasaurus.release.xcconfig */,
+				131AC21ECEC6B5EB97D36981 /* Pods-StegasaurusTests.debug.xcconfig */,
+				4DC746EB1F505F37ECA29E46 /* Pods-StegasaurusTests.release.xcconfig */,
+				2BAC382DBC74CFC107A38DD4 /* Pods-StegasaurusUITests.debug.xcconfig */,
+				84FEEDB86D9D55B2FC658D7F /* Pods-StegasaurusUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		4FCA9B7E2094FEAE00BA8A96 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +119,8 @@
 				4FCA9B9E2094FEB000BA8A96 /* StegasaurusTests */,
 				4FCA9BA92094FEB000BA8A96 /* StegasaurusUITests */,
 				4FCA9B882094FEAE00BA8A96 /* Products */,
+				31459BC57B8146BE44C61A75 /* Pods */,
+				6BF65371DD3D89510E347819 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,6 +170,16 @@
 			path = StegasaurusUITests;
 			sourceTree = "<group>";
 		};
+		6BF65371DD3D89510E347819 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				25B7E1031AF1BEFEE73A5AC2 /* Pods_Stegasaurus.framework */,
+				04CDAE5957CB4B92C7417560 /* Pods_StegasaurusTests.framework */,
+				5D0C4F479B6D2DAD470AEA14 /* Pods_StegasaurusUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +187,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4FCA9BAF2094FEB000BA8A96 /* Build configuration list for PBXNativeTarget "Stegasaurus" */;
 			buildPhases = (
+				95B81E1BA42DA47CB3A05FED /* [CP] Check Pods Manifest.lock */,
 				4FCA9B832094FEAE00BA8A96 /* Sources */,
 				4FCA9B842094FEAE00BA8A96 /* Frameworks */,
 				4FCA9B852094FEAE00BA8A96 /* Resources */,
+				0F9CF9EDDFF4E64A971A0676 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -164,6 +206,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4FCA9BB22094FEB000BA8A96 /* Build configuration list for PBXNativeTarget "StegasaurusTests" */;
 			buildPhases = (
+				C39BCDE493FF86F237BBB89D /* [CP] Check Pods Manifest.lock */,
 				4FCA9B972094FEB000BA8A96 /* Sources */,
 				4FCA9B982094FEB000BA8A96 /* Frameworks */,
 				4FCA9B992094FEB000BA8A96 /* Resources */,
@@ -182,6 +225,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4FCA9BB52094FEB000BA8A96 /* Build configuration list for PBXNativeTarget "StegasaurusUITests" */;
 			buildPhases = (
+				A0C229611247D60950819309 /* [CP] Check Pods Manifest.lock */,
 				4FCA9BA22094FEB000BA8A96 /* Sources */,
 				4FCA9BA32094FEB000BA8A96 /* Frameworks */,
 				4FCA9BA42094FEB000BA8A96 /* Resources */,
@@ -265,6 +309,81 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F9CF9EDDFF4E64A971A0676 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Stegasaurus/Pods-Stegasaurus-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RNCryptor/RNCryptor.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNCryptor.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stegasaurus/Pods-Stegasaurus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		95B81E1BA42DA47CB3A05FED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Stegasaurus-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0C229611247D60950819309 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StegasaurusUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C39BCDE493FF86F237BBB89D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StegasaurusTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4FCA9B832094FEAE00BA8A96 /* Sources */ = {
@@ -448,15 +567,13 @@
 		};
 		4FCA9BB02094FEB000BA8A96 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5531CBA7D8A6C86148BF7008 /* Pods-Stegasaurus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CY5UTYJH5;
 				INFOPLIST_FILE = Stegasaurus/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AgrippaApps.Stegasaurus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -466,15 +583,13 @@
 		};
 		4FCA9BB12094FEB000BA8A96 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E327039FCA0868942185071E /* Pods-Stegasaurus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CY5UTYJH5;
 				INFOPLIST_FILE = Stegasaurus/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AgrippaApps.Stegasaurus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -484,17 +599,14 @@
 		};
 		4FCA9BB32094FEB000BA8A96 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 131AC21ECEC6B5EB97D36981 /* Pods-StegasaurusTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CY5UTYJH5;
 				INFOPLIST_FILE = StegasaurusTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AgrippaApps.StegasaurusTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -505,17 +617,14 @@
 		};
 		4FCA9BB42094FEB000BA8A96 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DC746EB1F505F37ECA29E46 /* Pods-StegasaurusTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CY5UTYJH5;
 				INFOPLIST_FILE = StegasaurusTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AgrippaApps.StegasaurusTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -526,16 +635,13 @@
 		};
 		4FCA9BB62094FEB000BA8A96 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BAC382DBC74CFC107A38DD4 /* Pods-StegasaurusUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CY5UTYJH5;
 				INFOPLIST_FILE = StegasaurusUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AgrippaApps.StegasaurusUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -546,16 +652,13 @@
 		};
 		4FCA9BB72094FEB000BA8A96 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84FEEDB86D9D55B2FC658D7F /* Pods-StegasaurusUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CY5UTYJH5;
 				INFOPLIST_FILE = StegasaurusUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AgrippaApps.StegasaurusUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
