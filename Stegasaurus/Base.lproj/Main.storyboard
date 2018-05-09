@@ -63,6 +63,7 @@
                                             <constraint firstAttribute="height" constant="45" id="NcG-fr-Yo4"/>
                                             <constraint firstAttribute="width" constant="105" id="P5n-1m-oPz"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="Hide TXN">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -72,13 +73,14 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJ0-Bg-LQ2">
                                         <rect key="frame" x="106" y="0.0" width="105" height="45"/>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="SgQ-Hz-BPs"/>
                                             <constraint firstAttribute="width" constant="105" id="oax-ML-0Wl"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="Reveal TXN">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="revealAction:" destination="Fx2-KB-Pj8" eventType="touchUpInside" id="T4M-3B-Uew"/>
@@ -129,7 +131,8 @@
                         <outlet property="revealBTN" destination="HJ0-Bg-LQ2" id="Mx9-6V-FQh"/>
                         <outlet property="stegaImage" destination="HNN-mE-P6L" id="a28-ZN-UKW"/>
                         <outlet property="textView" destination="AWM-n4-VdS" id="ytm-t6-aDh"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="toMain" id="wSa-o5-sZv"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="toHide" id="wSa-o5-sZv"/>
+                        <segue destination="AwL-uC-5UQ" kind="show" identifier="toReveal" id="yQa-kt-n3R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ea5-bd-LT1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -180,19 +183,19 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6ic-FE-pyu">
-                                <rect key="frame" x="30" y="435" width="315" height="128"/>
+                                <rect key="frame" x="30" y="440" width="315" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="999" constant="128" id="LVV-II-Q3I"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Csg-HW-fBM">
-                                <rect key="frame" x="30" y="387" width="315" height="40"/>
+                                <rect key="frame" x="30" y="387" width="315" height="45"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="x0E-pK-qpE"/>
+                                    <constraint firstAttribute="height" constant="45" id="x0E-pK-qpE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Now Tap to Choose Image">
+                                <state key="normal" title="Choose Image to Hide TXN">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -270,7 +273,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="133.5832083958021"/>
+            <point key="canvasLocation" x="1066" y="-303"/>
         </scene>
         <!--Finished View Controller-->
         <scene sceneID="F26-kf-gm5">
@@ -364,22 +367,104 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XhZ-vN-4Ce" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1780" y="336.88155922038982"/>
+            <point key="canvasLocation" x="1774" y="-304"/>
         </scene>
-        <!--View Controller-->
+        <!--Reveal View Controller-->
         <scene sceneID="BoX-pb-SYW">
             <objects>
-                <viewController id="AwL-uC-5UQ" sceneMemberID="viewController">
+                <viewController id="AwL-uC-5UQ" customClass="RevealViewController" customModule="Stegasaurus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rDs-Qz-8wv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00O-vo-nSx">
+                                <rect key="frame" x="30" y="496" width="315" height="45"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="sC2-Ia-cUq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Choose Image to Reveal TXN">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="chooseImageAction:" destination="AwL-uC-5UQ" eventType="touchUpInside" id="DXw-gM-zdh"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Stegasaurus" translatesAutoresizingMaskIntoConstraints="NO" id="hBt-0c-TYa">
+                                <rect key="frame" x="30" y="72" width="315" height="340"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Te-eb-NHe">
+                                <rect key="frame" x="30" y="549" width="315" height="45"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="qiR-Ta-qDA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <state key="normal" title="Copy">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="copyTXNAction:" destination="AwL-uC-5UQ" eventType="touchUpInside" id="Nbr-d6-Y7G"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jj3-If-9xa">
+                                <rect key="frame" x="30" y="602" width="315" height="45"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="PdU-6A-Plg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendTXNAction:" destination="AwL-uC-5UQ" eventType="touchUpInside" id="DiT-Xh-GMD"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ASO-kS-24J">
+                                <rect key="frame" x="30" y="420" width="315" height="68"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="dw7-f4-cTM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Jj3-If-9xa" firstAttribute="top" secondItem="7Te-eb-NHe" secondAttribute="bottom" constant="8" id="3M7-wg-HeT"/>
+                            <constraint firstItem="Jj3-If-9xa" firstAttribute="leading" secondItem="LXE-ri-ZfC" secondAttribute="leading" constant="30" id="54u-2T-qlZ"/>
+                            <constraint firstItem="Jj3-If-9xa" firstAttribute="centerX" secondItem="rDs-Qz-8wv" secondAttribute="centerX" id="6r6-oO-4Bh"/>
+                            <constraint firstItem="LXE-ri-ZfC" firstAttribute="trailing" secondItem="hBt-0c-TYa" secondAttribute="trailing" constant="30" id="9QS-NK-WKH"/>
+                            <constraint firstItem="00O-vo-nSx" firstAttribute="top" secondItem="ASO-kS-24J" secondAttribute="bottom" constant="8" id="F2H-aJ-BiT"/>
+                            <constraint firstItem="hBt-0c-TYa" firstAttribute="leading" secondItem="LXE-ri-ZfC" secondAttribute="leading" constant="30" id="JBo-rv-vKD"/>
+                            <constraint firstItem="ASO-kS-24J" firstAttribute="leading" secondItem="LXE-ri-ZfC" secondAttribute="leading" constant="30" id="Kay-ej-YJt"/>
+                            <constraint firstItem="ASO-kS-24J" firstAttribute="top" secondItem="hBt-0c-TYa" secondAttribute="bottom" constant="8" id="OJU-2H-7iT"/>
+                            <constraint firstItem="7Te-eb-NHe" firstAttribute="centerX" secondItem="rDs-Qz-8wv" secondAttribute="centerX" id="Wq3-55-U86"/>
+                            <constraint firstItem="00O-vo-nSx" firstAttribute="leading" secondItem="LXE-ri-ZfC" secondAttribute="leading" constant="30" id="aYs-IV-sgn"/>
+                            <constraint firstItem="LXE-ri-ZfC" firstAttribute="bottom" secondItem="Jj3-If-9xa" secondAttribute="bottom" constant="20" id="etx-ZR-hdo"/>
+                            <constraint firstItem="LXE-ri-ZfC" firstAttribute="trailing" secondItem="Jj3-If-9xa" secondAttribute="trailing" constant="30" id="g2Z-6p-OHs"/>
+                            <constraint firstItem="7Te-eb-NHe" firstAttribute="top" secondItem="00O-vo-nSx" secondAttribute="bottom" constant="8" id="gId-k7-6bR"/>
+                            <constraint firstItem="LXE-ri-ZfC" firstAttribute="trailing" secondItem="ASO-kS-24J" secondAttribute="trailing" constant="30" id="hT7-2f-X7d"/>
+                            <constraint firstItem="hBt-0c-TYa" firstAttribute="top" secondItem="LXE-ri-ZfC" secondAttribute="top" constant="8" id="jmx-jU-jxk"/>
+                            <constraint firstItem="7Te-eb-NHe" firstAttribute="leading" secondItem="LXE-ri-ZfC" secondAttribute="leading" constant="30" id="sXx-qW-FvI"/>
+                            <constraint firstItem="LXE-ri-ZfC" firstAttribute="trailing" secondItem="00O-vo-nSx" secondAttribute="trailing" constant="30" id="xLg-D1-8N3"/>
+                            <constraint firstItem="LXE-ri-ZfC" firstAttribute="trailing" secondItem="7Te-eb-NHe" secondAttribute="trailing" constant="30" id="xwM-qv-PBy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="LXE-ri-ZfC"/>
                     </view>
+                    <connections>
+                        <outlet property="chooseImageBTN" destination="00O-vo-nSx" id="8ax-YL-mEP"/>
+                        <outlet property="copyTXNBTN" destination="7Te-eb-NHe" id="ao0-rJ-Y7L"/>
+                        <outlet property="revealImage" destination="hBt-0c-TYa" id="5SE-2u-MNU"/>
+                        <outlet property="sendTXNBTN" destination="Jj3-If-9xa" id="Sh8-7Z-7Xz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dj1-DS-dlu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1790" y="-329"/>
+            <point key="canvasLocation" x="1064.8" y="386.35682158920542"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rGe-hB-hvn">

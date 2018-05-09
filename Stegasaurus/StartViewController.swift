@@ -8,12 +8,29 @@
 
 import UIKit
 
+enum StateOfStega {
+    case hide
+    case reveal
+}
 class StartViewController: UIViewController {
+
+    var stegaPink = UIColor(red: 255/255, green: 0/255, blue: 155/255, alpha: 1.0)
+    var darkGrey = UIColor.darkGray
+    var stateOfSt: StateOfStega = .hide {
+        didSet { //called when item changes
+            print("changed state to: \(stateOfSt)")
+            changeStateTo(to: stateOfSt)
+        }
+    }
 
     @IBOutlet weak var proceedButton: UIButton!
     @IBAction func proceedAction(_ sender: Any) {
         
-        performSegue(withIdentifier: "toMain", sender: nil)
+        if stateOfSt == .hide {
+        performSegue(withIdentifier: "toHide", sender: nil)
+        } else {
+            performSegue(withIdentifier: "toReveal", sender: nil)
+        }
     }
     
     
@@ -26,15 +43,18 @@ class StartViewController: UIViewController {
     // hide or reveal switcher
     @IBOutlet weak var hideBTN: UIButton!
     @IBAction func hideAction(_ sender: Any) {
+        stateOfSt = .hide
     }
     @IBOutlet weak var revealBTN: UIButton!
     @IBAction func revealAction(_ sender: Any) {
+        stateOfSt = .reveal
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         // Do any additional setup after loading the view.
     }
 
@@ -44,6 +64,28 @@ class StartViewController: UIViewController {
     }
     
 
+    func changeStateTo(to: StateOfStega) {
+        if to == .hide {
+            // hide pressed
+            hideBTN.backgroundColor = stegaPink
+            hideBTN.setTitleColor(.white, for: .normal)
+
+
+            revealBTN.backgroundColor = .lightGray
+            revealBTN.setTitleColor(darkGrey, for: .normal)
+
+        } else {
+            // reveal pressed
+            hideBTN.backgroundColor = .lightGray
+            hideBTN.setTitleColor(darkGrey, for: .normal)
+
+            revealBTN.backgroundColor = stegaPink
+            revealBTN.setTitleColor(.white, for: .normal)
+
+
+        }
+        
+    }
     /*
     // MARK: - Navigation
 

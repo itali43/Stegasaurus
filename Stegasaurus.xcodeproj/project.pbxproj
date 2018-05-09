@@ -19,6 +19,7 @@
 		4FCA9BAB2094FEB000BA8A96 /* StegasaurusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA9BAA2094FEB000BA8A96 /* StegasaurusUITests.swift */; };
 		4FCA9BB92094FED700BA8A96 /* Picto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA9BB82094FED700BA8A96 /* Picto.swift */; };
 		4FD1C5B420A0E68200E45947 /* PictographImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD1C5B320A0E68200E45947 /* PictographImage.swift */; };
+		4FE0FEF220A2B38600FB9407 /* RevealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE0FEF120A2B38600FB9407 /* RevealViewController.swift */; };
 		5C80987FC413FA35038913CD /* Pods_StegasaurusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0C4F479B6D2DAD470AEA14 /* Pods_StegasaurusUITests.framework */; };
 		86DBD78B561DF79CB203826A /* Pods_StegasaurusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04CDAE5957CB4B92C7417560 /* Pods_StegasaurusTests.framework */; };
 		E143128C5AFE05BB862CB1C8 /* Pods_Stegasaurus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25B7E1031AF1BEFEE73A5AC2 /* Pods_Stegasaurus.framework */; };
@@ -65,6 +66,7 @@
 		4FCA9BAC2094FEB000BA8A96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FCA9BB82094FED700BA8A96 /* Picto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picto.swift; sourceTree = "<group>"; };
 		4FD1C5B320A0E68200E45947 /* PictographImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictographImage.swift; sourceTree = "<group>"; };
+		4FE0FEF120A2B38600FB9407 /* RevealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevealViewController.swift; sourceTree = "<group>"; };
 		5531CBA7D8A6C86148BF7008 /* Pods-Stegasaurus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stegasaurus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stegasaurus/Pods-Stegasaurus.debug.xcconfig"; sourceTree = "<group>"; };
 		5D0C4F479B6D2DAD470AEA14 /* Pods_StegasaurusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StegasaurusUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FEEDB86D9D55B2FC658D7F /* Pods-StegasaurusUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StegasaurusUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StegasaurusUITests/Pods-StegasaurusUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			children = (
 				4FCA9B8A2094FEAE00BA8A96 /* AppDelegate.swift */,
 				4FB23090209A937300DD7581 /* StartViewController.swift */,
+				4FE0FEF120A2B38600FB9407 /* RevealViewController.swift */,
 				4FCA9B8C2094FEAE00BA8A96 /* ViewController.swift */,
 				4FB23092209A937E00DD7581 /* FinishedViewController.swift */,
 				4FCA9BB82094FED700BA8A96 /* Picto.swift */,
@@ -319,10 +322,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Stegasaurus/Pods-Stegasaurus-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ISStego/ISStego.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ISStego.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -393,6 +398,7 @@
 				4FCA9B8D2094FEAE00BA8A96 /* ViewController.swift in Sources */,
 				4F21D812209E69E60086C8DD /* STEGAlert.swift in Sources */,
 				4FB23091209A937300DD7581 /* StartViewController.swift in Sources */,
+				4FE0FEF220A2B38600FB9407 /* RevealViewController.swift in Sources */,
 				4FCA9B8B2094FEAE00BA8A96 /* AppDelegate.swift in Sources */,
 				4FCA9BB92094FED700BA8A96 /* Picto.swift in Sources */,
 				4FB23093209A937E00DD7581 /* FinishedViewController.swift in Sources */,
@@ -573,7 +579,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CY5UTYJH5;
 				INFOPLIST_FILE = Stegasaurus/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.AgrippaApps.Stegasaurus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -589,7 +598,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CY5UTYJH5;
 				INFOPLIST_FILE = Stegasaurus/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.AgrippaApps.Stegasaurus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -606,7 +618,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CY5UTYJH5;
 				INFOPLIST_FILE = StegasaurusTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.AgrippaApps.StegasaurusTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -624,7 +640,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CY5UTYJH5;
 				INFOPLIST_FILE = StegasaurusTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.AgrippaApps.StegasaurusTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -641,7 +661,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CY5UTYJH5;
 				INFOPLIST_FILE = StegasaurusUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.AgrippaApps.StegasaurusUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -658,7 +682,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CY5UTYJH5;
 				INFOPLIST_FILE = StegasaurusUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.AgrippaApps.StegasaurusUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

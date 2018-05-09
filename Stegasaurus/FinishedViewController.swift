@@ -10,6 +10,7 @@ import UIKit
 import ISStego
 import Foundation
 import Security
+import PromiseKit
 
 
 class FinishedViewController: UIViewController {
@@ -19,19 +20,21 @@ class FinishedViewController: UIViewController {
     
     @IBOutlet weak var copyBTN: UIButton!
     @IBAction func copyAction(_ sender: Any) {
-        if let finishedImaged = finishedImage.image {
-            print("image copied to clipboard, show alert")
-            UIPasteboard.general.image = finishedImage.image
-        }
+        self.encryptTransaction(txn: "Elliott is a member of the stegasaurus club", into: finishedImage.image!)
+
+//        if let finishedImaged = finishedImage.image {
+//            print("image copied to clipboard, show alert")
+//            UIPasteboard.general.image = finishedImage.image
+//        }
     }
     
     
     @IBOutlet weak var finishedText: UILabel!
     @IBOutlet weak var sendBTN: UIButton!
     @IBAction func sendAction(_ sender: Any) {
-        print(createAlphaNumericRandomString(length: 337))
+//        print(createAlphaNumericRandomString(length: 337))
 
-//        decryptTransaction(from: finishedImage.image!)
+        decryptTransaction(from: finishedImage.image!)
 //            let vc = UIActivityViewController(activityItems: [passedImage], applicationActivities: [])
 //            present(vc, animated: true)
 
@@ -40,13 +43,16 @@ class FinishedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
         let stegaImage = UIImageView(image: #imageLiteral(resourceName: "albinoStegasaurus"))
         stegaImage.contentMode = .scaleAspectFit
         self.navigationItem.titleView = stegaImage
         finishedImage.image = passedImage
         finishedImage.contentMode = .scaleAspectFit
-        encryptTransaction(txn: "Elliott is a member of the stegasaurus club", into: passedImage)
         finishedImage.image = passedImage
+        encryptTransaction(txn: createAlphaNumericRandomString(length: 337)!, into: finishedImage.image!)
+        encryptTransaction(txn: createAlphaNumericRandomString(length: 337)!, into: finishedImage.image!)
 
 
         // Do any additional setup after loading the view.
@@ -144,34 +150,23 @@ class FinishedViewController: UIViewController {
         // this limit is chosen because it is close to the number of possible symbols A-Z, a-z, 0-9
         // so the error rate for invalid indices is low
         let randomNumberModulo: UInt8 = 64
-        
         // indices greater than the length of the symbols string are invalid
         // invalid indices are skipped
         let symbols = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
-        
         var alphaNumericRandomString = ""
-        
         let maximumIndex = symbols.count - 1
-        
         while alphaNumericRandomString.count != length {
             let bytesCount = 1
             var randomByte: UInt8 = 0
-            
-            guard errSecSuccess == SecRandomCopyBytes(kSecRandomDefault, bytesCount, &randomByte) else {
-                return nil
-            }
-            
+            guard errSecSuccess == SecRandomCopyBytes(kSecRandomDefault, bytesCount, &randomByte) else { return nil }
             let randomIndex = randomByte % randomNumberModulo
-            
             // check if index exceeds symbols string length, then skip
             guard randomIndex <= maximumIndex else { continue }
-            
             let symbolIndex = symbols.index(symbols.startIndex, offsetBy: Int(randomIndex))
             alphaNumericRandomString.append(symbols[symbolIndex])
         }
-        
         return alphaNumericRandomString
     }
 
 
-}
+} // end class
