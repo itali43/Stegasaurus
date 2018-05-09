@@ -117,7 +117,6 @@
                             <constraint firstItem="FWJ-zs-rVn" firstAttribute="bottom" secondItem="r6w-xX-TaS" secondAttribute="bottom" constant="20" id="h91-d9-uI7"/>
                             <constraint firstItem="FWJ-zs-rVn" firstAttribute="trailing" secondItem="r6w-xX-TaS" secondAttribute="trailing" constant="20" id="pGK-dC-9Cu"/>
                             <constraint firstItem="AWM-n4-VdS" firstAttribute="leading" secondItem="FWJ-zs-rVn" secondAttribute="leading" constant="20" id="r4W-LN-5Qb"/>
-                            <constraint firstItem="r6w-xX-TaS" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ymJ-GA-Coj" secondAttribute="bottom" constant="8" id="uA6-V7-UFi"/>
                             <constraint firstItem="FWJ-zs-rVn" firstAttribute="trailing" secondItem="CdG-8W-hgc" secondAttribute="trailing" constant="16" id="uL1-FE-wPQ"/>
                             <constraint firstItem="R1Y-Zt-3Vp" firstAttribute="leading" secondItem="FWJ-zs-rVn" secondAttribute="leading" constant="20" id="zKj-86-d0h"/>
                         </constraints>
@@ -137,10 +136,10 @@
             </objects>
             <point key="canvasLocation" x="280.80000000000001" y="135.38230884557723"/>
         </scene>
-        <!--View Controller-->
+        <!--Hide-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Stegasaurus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Hide" id="BYZ-38-t0r" customClass="ViewController" customModule="Stegasaurus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

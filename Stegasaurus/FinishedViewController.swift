@@ -8,6 +8,10 @@
 
 import UIKit
 import ISStego
+import Foundation
+import Security
+
+
 class FinishedViewController: UIViewController {
 
     var passedImage: UIImage = #imageLiteral(resourceName: "Stegasaurus")
@@ -25,7 +29,9 @@ class FinishedViewController: UIViewController {
     @IBOutlet weak var finishedText: UILabel!
     @IBOutlet weak var sendBTN: UIButton!
     @IBAction func sendAction(_ sender: Any) {
-        decryptTransaction(from: finishedImage.image!)
+        print(createAlphaNumericRandomString(length: 337))
+
+//        decryptTransaction(from: finishedImage.image!)
 //            let vc = UIActivityViewController(activityItems: [passedImage], applicationActivities: [])
 //            present(vc, animated: true)
 
@@ -109,6 +115,62 @@ class FinishedViewController: UIViewController {
             }
         })
         
+    }
+    
+    // Random Red Herring Data
+//    func randomString(length: Int) -> String {
+//
+//        let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+//        let len = UInt32(letters.length)
+//
+//        var randomString = ""
+//
+//        for _ in 0 ..< length {
+//            let rand = arc4random_uniform(len)
+//            var nextChar = letters.character(at: Int(rand))
+//            randomString += NSString(characters: &nextChar, length: 1) as String
+//        }
+//
+//        return randomString
+//    }
+
+    
+    
+    // creates random strings to encode
+    // IMPROVEMENT: may want random data to be the same length as the real transaction || plus or minus a few char
+     func createAlphaNumericRandomString(length: Int) -> String? {
+        // create random numbers from 0 to 63
+        // use random numbers as index for accessing characters from the symbols string
+        // this limit is chosen because it is close to the number of possible symbols A-Z, a-z, 0-9
+        // so the error rate for invalid indices is low
+        let randomNumberModulo: UInt8 = 64
+        
+        // indices greater than the length of the symbols string are invalid
+        // invalid indices are skipped
+        let symbols = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+        
+        var alphaNumericRandomString = ""
+        
+        let maximumIndex = symbols.count - 1
+        
+        while alphaNumericRandomString.count != length {
+            let bytesCount = 1
+            var randomByte: UInt8 = 0
+            
+            guard errSecSuccess == SecRandomCopyBytes(kSecRandomDefault, bytesCount, &randomByte) else {
+                return nil
+            }
+            
+            let randomIndex = randomByte % randomNumberModulo
+            
+            // check if index exceeds symbols string length, then skip
+            guard randomIndex <= maximumIndex else { continue }
+            
+            let symbolIndex = symbols.index(symbols.startIndex, offsetBy: Int(randomIndex))
+            alphaNumericRandomString.append(symbols[symbolIndex])
+        }
+        
+        return alphaNumericRandomString
     }
 
 
