@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ISStego
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
 
@@ -16,14 +17,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var pasteBTN: UIButton!
     
     @IBAction func pasteAction(_ sender: Any) {
-        
         if let pasteString = UIPasteboard.general.string {
             txnTF.text = pasteString
         }
 
     }
     
-    
+
     
     @IBOutlet weak var imageView: UIImageView!
     let imagePicker = UIImagePickerController()
@@ -111,6 +111,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     
+
     
-}
+    
+} // end class
+
+
+
+
+
+
+
+
+
+
+
+
 

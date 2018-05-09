@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import ISStego
 class FinishedViewController: UIViewController {
 
     var passedImage: UIImage = #imageLiteral(resourceName: "Stegasaurus")
@@ -20,10 +20,14 @@ class FinishedViewController: UIViewController {
             UIPasteboard.general.image = finishedImage.image
         }
     }
+    
+    
+    @IBOutlet weak var finishedText: UILabel!
     @IBOutlet weak var sendBTN: UIButton!
     @IBAction func sendAction(_ sender: Any) {
-            let vc = UIActivityViewController(activityItems: [passedImage], applicationActivities: [])
-            present(vc, animated: true)
+        decryptTransaction(from: finishedImage.image!)
+//            let vc = UIActivityViewController(activityItems: [passedImage], applicationActivities: [])
+//            present(vc, animated: true)
 
     }
     
@@ -35,6 +39,9 @@ class FinishedViewController: UIViewController {
         self.navigationItem.titleView = stegaImage
         finishedImage.image = passedImage
         finishedImage.contentMode = .scaleAspectFit
+        encryptTransaction(txn: "Elliott is a member of the stegasaurus club", into: passedImage)
+        finishedImage.image = passedImage
+
 
         // Do any additional setup after loading the view.
     }
@@ -54,5 +61,55 @@ class FinishedViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // STEGANOGRAPHY  ==============================
+    // STEGANOGRAPHY  ------------------------------------------------------
+    // STEGANOGRAPHY  ==============================
+    // STEGANOGRAPHY  ------------------------------------------------------
+    // STEGANOGRAPHY  ==============================
+    //----------------------------------------------------------------------------
+    //==========================================
+    //----------------------------------------------------------------------------
+    //==========================================
+    
+    func encryptTransaction(txn: String, into image: UIImage) {
+        var encryptedPassword = txn
+        ISSteganographer.hideData(encryptedPassword, withImage: image, completionBlock: {(_ image: Any?, _ error: Error?) -> Void in
+            if error != nil {
+                if let anError = error {
+                    print("error: \(anError)")
+                }
+            } else {
+                
+                DispatchQueue.main.async {
+                    self.finishedImage.image = UIImage(data: UIImagePNGRepresentation(image as! UIImage)!)
+                    print("changed image")
+                }
+            }
+        })
+    }
+    
+    func decryptTransaction(from image: UIImage) {
+        //        var image = UIImage(named: "stegoImageName")
+        ISSteganographer.data(fromImage: image, completionBlock: {(_ data: Data?, _ error: Error?) -> Void in
+            if error != nil {
+                if let anError = error {
+                    print("error: \(anError)")
+                }
+            } else {
+                var hiddenData: String? = nil
+                if let aData = data {
+                    hiddenData = String(data: aData, encoding: .utf8)
+                }
+                print("hidden string: \(hiddenData ?? "")")
+                
+                                DispatchQueue.main.async {
+                                    self.finishedText.text = "\(hiddenData ?? ":(")"
+                                }
+            }
+        })
+        
+    }
+
 
 }

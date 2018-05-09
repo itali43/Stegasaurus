@@ -359,6 +359,7 @@
                     <connections>
                         <outlet property="copyBTN" destination="Mrc-QM-cNd" id="yKd-wb-tPG"/>
                         <outlet property="finishedImage" destination="ILx-1z-cjc" id="5Cn-gD-qH9"/>
+                        <outlet property="finishedText" destination="2Kz-c4-ms9" id="pAX-Bs-j3C"/>
                         <outlet property="sendBTN" destination="PKS-iA-fqi" id="i9s-2k-mkf"/>
                     </connections>
                 </viewController>
