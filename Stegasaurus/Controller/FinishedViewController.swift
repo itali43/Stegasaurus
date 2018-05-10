@@ -14,18 +14,26 @@ import PromiseKit
 
 
 class FinishedViewController: UIViewController {
-
+    // image and transaction injection from previous VC
+    var passedTXN = "---------"
     var passedImage: UIImage = #imageLiteral(resourceName: "Stegasaurus")
+    
+    // loading screen
+    @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var loadingStega: UIImageView!
+    
+    
+    
+    
     @IBOutlet weak var finishedImage: UIImageView!
     
     @IBOutlet weak var copyBTN: UIButton!
     @IBAction func copyAction(_ sender: Any) {
-        self.encryptTransaction(txn: "Elliott is a member of the stegasaurus club", into: finishedImage.image!)
 
-//        if let finishedImaged = finishedImage.image {
-//            print("image copied to clipboard, show alert")
-//            UIPasteboard.general.image = finishedImage.image
-//        }
+        if let finishedImaged = finishedImage.image {
+            print("image copied to clipboard, show alert")
+            UIPasteboard.general.image = finishedImage.image
+        }
     }
     
     
@@ -34,9 +42,8 @@ class FinishedViewController: UIViewController {
     @IBAction func sendAction(_ sender: Any) {
 //        print(createAlphaNumericRandomString(length: 337))
 
-        decryptTransaction(from: finishedImage.image!)
-//            let vc = UIActivityViewController(activityItems: [passedImage], applicationActivities: [])
-//            present(vc, animated: true)
+            let vc = UIActivityViewController(activityItems: [passedImage], applicationActivities: [])
+            present(vc, animated: true)
 
     }
     
@@ -44,6 +51,10 @@ class FinishedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        rotationAnimation(buttonToRotate: )
+        
+        
+        
         
         let stegaImage = UIImageView(image: #imageLiteral(resourceName: "albinoStegasaurus"))
         stegaImage.contentMode = .scaleAspectFit
@@ -51,9 +62,20 @@ class FinishedViewController: UIViewController {
         finishedImage.image = passedImage
         finishedImage.contentMode = .scaleAspectFit
         finishedImage.image = passedImage
-        encryptTransaction(txn: createAlphaNumericRandomString(length: 337)!, into: finishedImage.image!)
-        encryptTransaction(txn: createAlphaNumericRandomString(length: 337)!, into: finishedImage.image!)
-
+        
+        // two red herrings and a big fat secret message
+        encryptTransaction(txn: createAlphaNumericRandomString(length: 337)!, into: self.passedImage) { (k) in
+            print(k)
+            self.encryptTransaction(txn: self.createAlphaNumericRandomString(length: 337)!, into:  self.passedImage) { (kk) in
+                print(kk)
+                self.encryptTransaction(txn: "\(self.passedTXN)", into:  self.passedImage) { (kkk) in
+                    print(kkk)
+                    DispatchQueue.main.async {
+                        self.finishedImage.image = self.passedImage//.rotate(radians: CGFloat(twoseventy))
+                    }
+                }
+            }
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -83,8 +105,8 @@ class FinishedViewController: UIViewController {
     //==========================================
     //----------------------------------------------------------------------------
     //==========================================
-    
-    func encryptTransaction(txn: String, into image: UIImage) {
+
+    func encryptTransaction(txn: String, into image: UIImage, andThen:@escaping ((String)->())){
         var encryptedPassword = txn
         ISSteganographer.hideData(encryptedPassword, withImage: image, completionBlock: {(_ image: Any?, _ error: Error?) -> Void in
             if error != nil {
@@ -92,38 +114,17 @@ class FinishedViewController: UIViewController {
                     print("error: \(anError)")
                 }
             } else {
+                self.passedImage =  UIImage(data: UIImagePNGRepresentation(image as! UIImage)!)!
+                print("changed image")
+                andThen("done")
                 
-                DispatchQueue.main.async {
-                    self.finishedImage.image = UIImage(data: UIImagePNGRepresentation(image as! UIImage)!)
-                    print("changed image")
-                }
             }
         })
     }
-    
-    func decryptTransaction(from image: UIImage) {
-        //        var image = UIImage(named: "stegoImageName")
-        ISSteganographer.data(fromImage: image, completionBlock: {(_ data: Data?, _ error: Error?) -> Void in
-            if error != nil {
-                if let anError = error {
-                    print("error: \(anError)")
-                }
-            } else {
-                var hiddenData: String? = nil
-                if let aData = data {
-                    hiddenData = String(data: aData, encoding: .utf8)
-                }
-                print("hidden string: \(hiddenData ?? "")")
-                
-                                DispatchQueue.main.async {
-                                    self.finishedText.text = "\(hiddenData ?? ":(")"
-                                }
-            }
-        })
-        
-    }
+  
     
     // Random Red Herring Data
+    //alternative option
 //    func randomString(length: Int) -> String {
 //
 //        let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
@@ -168,5 +169,17 @@ class FinishedViewController: UIViewController {
         return alphaNumericRandomString
     }
 
+    
+    // loading Animation (spinning stega!)
+     func rotationAnimation(buttonToRotate: UIImage) {
+        //        refreshOutlet.transform = CGAffineTransform(rotationAngle: (2*CGFloat.pi))
+        UIView.animate(withDuration: 0.5) { () -> Void in
+            buttonToRotate.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
+        }
+        UIView.animate(withDuration: 0.5, delay: 0.3, animations: { () -> Void in
+            buttonToRotate.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi * 2))
+        }, completion: nil)
+        print("rotate, hopefully a dinosaur")
+    }
 
 } // end class

@@ -19,6 +19,7 @@
 		4FCA9BAB2094FEB000BA8A96 /* StegasaurusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA9BAA2094FEB000BA8A96 /* StegasaurusUITests.swift */; };
 		4FCA9BB92094FED700BA8A96 /* Picto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA9BB82094FED700BA8A96 /* Picto.swift */; };
 		4FD1C5B420A0E68200E45947 /* PictographImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD1C5B320A0E68200E45947 /* PictographImage.swift */; };
+		4FDBE22D20A4D7350074533B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDBE22C20A4D7350074533B /* Extensions.swift */; };
 		4FE0FEF220A2B38600FB9407 /* RevealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE0FEF120A2B38600FB9407 /* RevealViewController.swift */; };
 		5C80987FC413FA35038913CD /* Pods_StegasaurusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0C4F479B6D2DAD470AEA14 /* Pods_StegasaurusUITests.framework */; };
 		86DBD78B561DF79CB203826A /* Pods_StegasaurusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04CDAE5957CB4B92C7417560 /* Pods_StegasaurusTests.framework */; };
@@ -66,6 +67,7 @@
 		4FCA9BAC2094FEB000BA8A96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FCA9BB82094FED700BA8A96 /* Picto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picto.swift; sourceTree = "<group>"; };
 		4FD1C5B320A0E68200E45947 /* PictographImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictographImage.swift; sourceTree = "<group>"; };
+		4FDBE22C20A4D7350074533B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4FE0FEF120A2B38600FB9407 /* RevealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevealViewController.swift; sourceTree = "<group>"; };
 		5531CBA7D8A6C86148BF7008 /* Pods-Stegasaurus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stegasaurus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stegasaurus/Pods-Stegasaurus.debug.xcconfig"; sourceTree = "<group>"; };
 		5D0C4F479B6D2DAD470AEA14 /* Pods_StegasaurusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StegasaurusUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,17 +142,11 @@
 			isa = PBXGroup;
 			children = (
 				4FCA9B8A2094FEAE00BA8A96 /* AppDelegate.swift */,
-				4FB23090209A937300DD7581 /* StartViewController.swift */,
-				4FE0FEF120A2B38600FB9407 /* RevealViewController.swift */,
-				4FCA9B8C2094FEAE00BA8A96 /* ViewController.swift */,
-				4FB23092209A937E00DD7581 /* FinishedViewController.swift */,
-				4FCA9BB82094FED700BA8A96 /* Picto.swift */,
-				4F21D811209E69E60086C8DD /* STEGAlert.swift */,
-				4FD1C5B320A0E68200E45947 /* PictographImage.swift */,
-				4FCA9B8E2094FEAE00BA8A96 /* Main.storyboard */,
-				4FCA9B912094FEB000BA8A96 /* Assets.xcassets */,
-				4FCA9B932094FEB000BA8A96 /* LaunchScreen.storyboard */,
-				4FCA9B962094FEB000BA8A96 /* Info.plist */,
+				4FDBE22E20A4EE830074533B /* Controller */,
+				4FDBE22F20A4EE8A0074533B /* View */,
+				4FDBE23020A4EE8F0074533B /* Model */,
+				4FDBE23220A4EEBF0074533B /* Resources */,
+				4FDBE23120A4EEAC0074533B /* Deprecated */,
 			);
 			path = Stegasaurus;
 			sourceTree = "<group>";
@@ -171,6 +167,53 @@
 				4FCA9BAC2094FEB000BA8A96 /* Info.plist */,
 			);
 			path = StegasaurusUITests;
+			sourceTree = "<group>";
+		};
+		4FDBE22E20A4EE830074533B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4FB23090209A937300DD7581 /* StartViewController.swift */,
+				4FB23092209A937E00DD7581 /* FinishedViewController.swift */,
+				4FCA9B8C2094FEAE00BA8A96 /* ViewController.swift */,
+				4FE0FEF120A2B38600FB9407 /* RevealViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4FDBE22F20A4EE8A0074533B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4FCA9B8E2094FEAE00BA8A96 /* Main.storyboard */,
+				4F21D811209E69E60086C8DD /* STEGAlert.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4FDBE23020A4EE8F0074533B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4FDBE23120A4EEAC0074533B /* Deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				4FD1C5B320A0E68200E45947 /* PictographImage.swift */,
+				4FCA9BB82094FED700BA8A96 /* Picto.swift */,
+			);
+			path = Deprecated;
+			sourceTree = "<group>";
+		};
+		4FDBE23220A4EEBF0074533B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4FCA9B912094FEB000BA8A96 /* Assets.xcassets */,
+				4FDBE22C20A4D7350074533B /* Extensions.swift */,
+				4FCA9B932094FEB000BA8A96 /* LaunchScreen.storyboard */,
+				4FCA9B962094FEB000BA8A96 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		6BF65371DD3D89510E347819 /* Frameworks */ = {
@@ -321,11 +364,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Stegasaurus/Pods-Stegasaurus-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ISStego/ISStego.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ISStego.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 			);
@@ -396,6 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FCA9B8D2094FEAE00BA8A96 /* ViewController.swift in Sources */,
+				4FDBE22D20A4D7350074533B /* Extensions.swift in Sources */,
 				4F21D812209E69E60086C8DD /* STEGAlert.swift in Sources */,
 				4FB23091209A937300DD7581 /* StartViewController.swift in Sources */,
 				4FE0FEF220A2B38600FB9407 /* RevealViewController.swift in Sources */,

@@ -9,9 +9,25 @@
 import UIKit
 import ISStego
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
-
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,  UITextFieldDelegate {
+    
     var imageToPass = #imageLiteral(resourceName: "Stegasaurus")
+    var messageToPass = ""
+    @IBAction func updateMessageFromTF(_ sender: Any) {
+        messageToPass = txnTF.text!
+        print("--\(messageToPass)--")
+    }
+    
+    
+    
+    //?work?
+    // This function makes the return button make the keyboard disappear
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            textField.resignFirstResponder()
+            self.view.endEditing(true)
+            return true
+        }
+
     @IBOutlet weak var txnTF: UITextField!
     
     @IBOutlet weak var pasteBTN: UIButton!
@@ -31,7 +47,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var doneButton: UIButton!
     
     @IBAction func doneAction(_ sender: Any) {
-        if imageToPass != #imageLiteral(resourceName: "Stegasaurus") {
+        if imageToPass != #imageLiteral(resourceName: "Stegasaurus") && txnTF.text != "" {
             performSegue(withIdentifier: "toFinished", sender: nil)
         } else {
             print("still equals stegasaurus filler image")
@@ -104,6 +120,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // Pass the selected object to the new view controller.
         if let destinationViewController = segue.destination as? FinishedViewController {
             destinationViewController.passedImage = imageToPass
+            destinationViewController.passedTXN = messageToPass
+
         }
 
     }
