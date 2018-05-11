@@ -63,10 +63,30 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func chooseImageButton(_ sender: Any) {
         
-        imagePicker.allowsEditing = false
-        imagePicker.sourceType = .photoLibrary
+
+
+        STEGAlert.cameraOrLibrary(fromVC: self) { (choiceOfCamera) in
+            switch choiceOfCamera {
+                case .camera:
+                    print("camera")
+                    self.imagePicker.allowsEditing = false
+                    self.self.imagePicker.sourceType = .camera
+                    self.present(self.imagePicker, animated: true, completion: nil)
+                case .photoLibrary:
+                    print("PL")
+                    self.photoLibAction()
+                case .cancel:
+                    print("cancel action sheet")
+                default:
+                print("defaulted, so just cancel action sheet anyway")
+            }
+        }
         
-        present(imagePicker, animated: true, completion: nil)
+        
+        
+        
+        
+
 
         
         
@@ -75,6 +95,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
+        
 
     } // end viewdidload
 
@@ -110,9 +131,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     
+    // photo library warning
+    func photoLibAction() {
+        STEGAlert.twoOptionButton(title: "Security Best Practices", message: "We'd like to note it's best to take a picture or use a picture you've taken before.  It is less conspicuous and the randomness of the pixels is positive for the obscurity at the heart of Steganography.  \n It is also recommended to use different pictures each time.", btn1: "You aren't my Nanny! Onward!", btn2: "Nevermind, I'll take a pic", fromController: self) { (onwardPressed) in
+        
+        print("onward pressed", onwardPressed)
+        if onwardPressed == true {
+            //photo library work
+            self.imagePicker.allowsEditing = false
+            self.imagePicker.sourceType = .photoLibrary
+            self.present(self.imagePicker, animated: true, completion: nil)
+        } else {
+            print("camera")
+            self.imagePicker.allowsEditing = false
+            self.self.imagePicker.sourceType = .camera
+            self.present(self.imagePicker, animated: true, completion: nil)
+        }
+        }
     
-    
-    
+    } // end photolib function
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

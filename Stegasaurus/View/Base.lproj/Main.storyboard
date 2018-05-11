@@ -297,7 +297,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Below is the new selected Image with the Bitcoin Cash Transaction encoded within:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3KO-Th-TGU">
-                                <rect key="frame" x="16" y="137" width="343" height="65"/>
+                                <rect key="frame" x="24" y="137" width="327" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="nMt-ue-Q6h"/>
                                 </constraints>
@@ -339,27 +339,43 @@
                                     <action selector="sendAction:" destination="ECu-7O-fcK" eventType="touchUpInside" id="aLe-xf-SYo"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Di-zF-Xfd">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Di-zF-Xfd">
+                                <rect key="frame" x="353" y="75" width="375" height="603"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="largeAlbinoStega" translatesAutoresizingMaskIntoConstraints="NO" id="jzR-3A-wZ7">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NXS-m1-yUL">
                                         <rect key="frame" x="67.5" y="181.5" width="240" height="240"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="240" id="l1T-Ip-LJA"/>
-                                            <constraint firstAttribute="width" constant="240" id="nGq-as-30x"/>
+                                            <constraint firstAttribute="height" constant="240" id="E7b-VM-ULP"/>
+                                            <constraint firstAttribute="width" constant="240" id="Nfg-J4-wj0"/>
                                         </constraints>
-                                    </imageView>
+                                        <state key="normal" image="largeAlbinoStega"/>
+                                        <connections>
+                                            <action selector="loadingStegaAction:" destination="ECu-7O-fcK" eventType="touchUpInside" id="qnd-qy-eRD"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One Moment, Please..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sg3-qN-A6N">
+                                        <rect key="frame" x="67.5" y="429" width="240" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="A12-hU-rJC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="jzR-3A-wZ7" firstAttribute="centerY" secondItem="5Di-zF-Xfd" secondAttribute="centerY" id="6nw-eF-Wy8"/>
-                                    <constraint firstItem="jzR-3A-wZ7" firstAttribute="centerX" secondItem="5Di-zF-Xfd" secondAttribute="centerX" id="zRN-Ja-rL1"/>
+                                    <constraint firstItem="NXS-m1-yUL" firstAttribute="centerY" secondItem="5Di-zF-Xfd" secondAttribute="centerY" id="3VP-fs-Cxo"/>
+                                    <constraint firstItem="sg3-qN-A6N" firstAttribute="top" secondItem="NXS-m1-yUL" secondAttribute="bottom" constant="8" id="Fnt-8D-grf"/>
+                                    <constraint firstItem="sg3-qN-A6N" firstAttribute="trailing" secondItem="NXS-m1-yUL" secondAttribute="trailing" id="Lho-X0-9xx"/>
+                                    <constraint firstItem="sg3-qN-A6N" firstAttribute="leading" secondItem="NXS-m1-yUL" secondAttribute="leading" id="ZPu-lK-b96"/>
+                                    <constraint firstItem="NXS-m1-yUL" firstAttribute="centerX" secondItem="5Di-zF-Xfd" secondAttribute="centerX" id="feh-qe-dY8"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="3KO-Th-TGU" firstAttribute="leading" secondItem="WIB-UL-gFn" secondAttribute="leading" constant="16" id="1As-eg-nae"/>
+                            <constraint firstItem="3KO-Th-TGU" firstAttribute="leading" secondItem="WIB-UL-gFn" secondAttribute="leading" constant="24" id="1As-eg-nae"/>
                             <constraint firstItem="WIB-UL-gFn" firstAttribute="trailing" secondItem="PKS-iA-fqi" secondAttribute="trailing" constant="30" id="4Xi-Yd-0vV"/>
                             <constraint firstItem="PKS-iA-fqi" firstAttribute="top" secondItem="Mrc-QM-cNd" secondAttribute="bottom" constant="8" id="9wk-aN-ZZ3"/>
                             <constraint firstItem="5Di-zF-Xfd" firstAttribute="top" secondItem="WIB-UL-gFn" secondAttribute="top" id="BaG-Y8-nVB"/>
@@ -374,7 +390,7 @@
                             <constraint firstItem="5Di-zF-Xfd" firstAttribute="leading" secondItem="WIB-UL-gFn" secondAttribute="leading" id="jI5-iF-59X"/>
                             <constraint firstItem="ILx-1z-cjc" firstAttribute="leading" secondItem="WIB-UL-gFn" secondAttribute="leading" constant="30" id="jpt-On-KV7"/>
                             <constraint firstItem="Mrc-QM-cNd" firstAttribute="top" secondItem="ILx-1z-cjc" secondAttribute="bottom" constant="12" id="nMs-bZ-CcJ"/>
-                            <constraint firstItem="WIB-UL-gFn" firstAttribute="trailing" secondItem="3KO-Th-TGU" secondAttribute="trailing" constant="16" id="o7j-DQ-NvR"/>
+                            <constraint firstItem="WIB-UL-gFn" firstAttribute="trailing" secondItem="3KO-Th-TGU" secondAttribute="trailing" constant="24" id="o7j-DQ-NvR"/>
                             <constraint firstItem="2Kz-c4-ms9" firstAttribute="leading" secondItem="WIB-UL-gFn" secondAttribute="leading" constant="16" id="rYN-Jt-xeA"/>
                             <constraint firstItem="ILx-1z-cjc" firstAttribute="top" secondItem="3KO-Th-TGU" secondAttribute="bottom" constant="8" id="thE-Po-qMr"/>
                             <constraint firstItem="WIB-UL-gFn" firstAttribute="trailing" secondItem="ILx-1z-cjc" secondAttribute="trailing" constant="30" id="uye-WB-Rhj"/>
@@ -386,7 +402,7 @@
                         <outlet property="copyBTN" destination="Mrc-QM-cNd" id="yKd-wb-tPG"/>
                         <outlet property="finishedImage" destination="ILx-1z-cjc" id="5Cn-gD-qH9"/>
                         <outlet property="finishedText" destination="2Kz-c4-ms9" id="pAX-Bs-j3C"/>
-                        <outlet property="loadingStega" destination="jzR-3A-wZ7" id="Ndd-Si-xdQ"/>
+                        <outlet property="loadingStega" destination="NXS-m1-yUL" id="6fz-y1-btb"/>
                         <outlet property="loadingView" destination="5Di-zF-Xfd" id="2Yc-aG-kDh"/>
                         <outlet property="sendBTN" destination="PKS-iA-fqi" id="i9s-2k-mkf"/>
                     </connections>

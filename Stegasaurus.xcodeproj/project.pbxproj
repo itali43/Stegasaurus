@@ -142,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				4FCA9B8A2094FEAE00BA8A96 /* AppDelegate.swift */,
+				4FCA9B962094FEB000BA8A96 /* Info.plist */,
 				4FDBE22E20A4EE830074533B /* Controller */,
 				4FDBE22F20A4EE8A0074533B /* View */,
 				4FDBE23020A4EE8F0074533B /* Model */,
@@ -173,8 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				4FB23090209A937300DD7581 /* StartViewController.swift */,
-				4FB23092209A937E00DD7581 /* FinishedViewController.swift */,
 				4FCA9B8C2094FEAE00BA8A96 /* ViewController.swift */,
+				4FB23092209A937E00DD7581 /* FinishedViewController.swift */,
 				4FE0FEF120A2B38600FB9407 /* RevealViewController.swift */,
 			);
 			path = Controller;
@@ -208,10 +209,9 @@
 		4FDBE23220A4EEBF0074533B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4FCA9B912094FEB000BA8A96 /* Assets.xcassets */,
 				4FDBE22C20A4D7350074533B /* Extensions.swift */,
+				4FCA9B912094FEB000BA8A96 /* Assets.xcassets */,
 				4FCA9B932094FEB000BA8A96 /* LaunchScreen.storyboard */,
-				4FCA9B962094FEB000BA8A96 /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -367,12 +367,14 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ISStego/ISStego.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/RNCryptor/RNCryptor.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ISStego.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNCryptor.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -625,10 +627,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CY5UTYJH5;
 				INFOPLIST_FILE = Stegasaurus/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AgrippaApps.Stegasaurus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -644,10 +643,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CY5UTYJH5;
 				INFOPLIST_FILE = Stegasaurus/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AgrippaApps.Stegasaurus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -664,11 +660,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CY5UTYJH5;
 				INFOPLIST_FILE = StegasaurusTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AgrippaApps.StegasaurusTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -686,11 +678,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CY5UTYJH5;
 				INFOPLIST_FILE = StegasaurusTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AgrippaApps.StegasaurusTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -707,11 +695,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CY5UTYJH5;
 				INFOPLIST_FILE = StegasaurusUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AgrippaApps.StegasaurusUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -728,11 +712,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CY5UTYJH5;
 				INFOPLIST_FILE = StegasaurusUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AgrippaApps.StegasaurusUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

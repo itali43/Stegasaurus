@@ -11,6 +11,7 @@ import ISStego
 import Foundation
 import Security
 import PromiseKit
+import RNCryptor
 
 
 class FinishedViewController: UIViewController {
@@ -20,8 +21,11 @@ class FinishedViewController: UIViewController {
     
     // loading screen
     @IBOutlet weak var loadingView: UIView!
-    @IBOutlet weak var loadingStega: UIImageView!
+    @IBOutlet weak var loadingStega: UIButton!
     
+    @IBAction func loadingStegaAction(_ sender: Any) {
+        print("load that stega!")
+    }
     
     
     
@@ -50,18 +54,22 @@ class FinishedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("OK..")
+        var encr =   encrypt(this: "Look at me!", with: "passthis")
+        print("ENCRY", encr)
+        var decry = decrypt(this: encr, with: "passthis")
+        print("DDDD", decry)
+        print("OK..")
+//        rotationAnimation(buttonToRotate: loadingStega)
+        loadingStega.startRotating(duration: CFTimeInterval(2), repeatCount: .infinity, clockwise: true)
 
-        rotationAnimation(buttonToRotate: )
-        
-        
-        
-        
+        // add image to title in navigation bar
         let stegaImage = UIImageView(image: #imageLiteral(resourceName: "albinoStegasaurus"))
         stegaImage.contentMode = .scaleAspectFit
         self.navigationItem.titleView = stegaImage
-        finishedImage.image = passedImage
-        finishedImage.contentMode = .scaleAspectFit
-        finishedImage.image = passedImage
+//        finishedImage.image = passedImage
+//        finishedImage.contentMode = .scaleAspectFit
+//        finishedImage.image = passedImage
         
         // two red herrings and a big fat secret message
         encryptTransaction(txn: createAlphaNumericRandomString(length: 337)!, into: self.passedImage) { (k) in
@@ -69,9 +77,15 @@ class FinishedViewController: UIViewController {
             self.encryptTransaction(txn: self.createAlphaNumericRandomString(length: 337)!, into:  self.passedImage) { (kk) in
                 print(kk)
                 self.encryptTransaction(txn: "\(self.passedTXN)", into:  self.passedImage) { (kkk) in
-                    print(kkk)
+                    print("actually ", kkk)
+                    print("image occidentation before", self.passedImage.imageOrientation)
+                    self.passedImage = self.passedImage.upOrientationImage()!
+                    print("image occidentation after", self.passedImage.imageOrientation)
+
                     DispatchQueue.main.async {
                         self.finishedImage.image = self.passedImage//.rotate(radians: CGFloat(twoseventy))
+                        self.loadingView.isHidden = true
+                        self.loadingStega.stopRotating()
                     }
                 }
             }
@@ -96,6 +110,33 @@ class FinishedViewController: UIViewController {
     }
     */
     
+    // Passworded Encryption  ==============================
+
+    func encrypt(this: String, with password: String) -> String {
+        // Encryption
+        let data: Data? = this.data(using: .utf8)  // non-nil
+//        let data: NSData = NSData(
+        let ciphertext = RNCryptor.encrypt(data: data!, withPassword: password) // needs error coverage
+        print(ciphertext)
+        var stringCiph = String(data: ciphertext, encoding: .utf8)
+        print(stringCiph)
+        return stringCiph ?? "nope"
+    }
+    
+    func decrypt(this: String, with password: String) {
+        // Decryption
+        do {
+            let dataFromString = this.data(using: .utf8)
+            let originalData = try RNCryptor.decrypt(data: dataFromString!, withPassword: password)
+        // ...
+        } catch {
+            print(error)
+        }
+
+    }
+    
+    
+    
     // STEGANOGRAPHY  ==============================
     // STEGANOGRAPHY  ------------------------------------------------------
     // STEGANOGRAPHY  ==============================
@@ -107,6 +148,10 @@ class FinishedViewController: UIViewController {
     //==========================================
 
     func encryptTransaction(txn: String, into image: UIImage, andThen:@escaping ((String)->())){
+        
+        
+        
+        
         var encryptedPassword = txn
         ISSteganographer.hideData(encryptedPassword, withImage: image, completionBlock: {(_ image: Any?, _ error: Error?) -> Void in
             if error != nil {
@@ -171,15 +216,18 @@ class FinishedViewController: UIViewController {
 
     
     // loading Animation (spinning stega!)
-     func rotationAnimation(buttonToRotate: UIImage) {
-        //        refreshOutlet.transform = CGAffineTransform(rotationAngle: (2*CGFloat.pi))
-        UIView.animate(withDuration: 0.5) { () -> Void in
-            buttonToRotate.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
-        }
-        UIView.animate(withDuration: 0.5, delay: 0.3, animations: { () -> Void in
-            buttonToRotate.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi * 2))
-        }, completion: nil)
-        print("rotate, hopefully a dinosaur")
-    }
+//     func rotationAnimation(buttonToRotate: UIButton) {
+//        //        refreshOutlet.transform = CGAffineTransform(rotationAngle: (2*CGFloat.pi))
+//
+//        UIView.animate(withDuration: 0.5) { () -> Void in
+//            buttonToRotate.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
+//        }
+//        UIView.animate(withDuration: 0.5, delay: 0.3, animations: { () -> Void in
+//            buttonToRotate.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi * 2))
+//        }, completion: nil)
+//
+//
+//        print("rotate, hopefully a dinosaur")
+//    }
 
 } // end class

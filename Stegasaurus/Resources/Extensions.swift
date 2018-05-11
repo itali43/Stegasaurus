@@ -26,5 +26,42 @@ extension UIImage {
         
         return self
     }
+        func upOrientationImage() -> UIImage? {
+            switch imageOrientation {
+            case .up:
+                return self
+            default:
+                UIGraphicsBeginImageContextWithOptions(size, false, scale)
+                draw(in: CGRect(origin: .zero, size: size))
+                let result = UIGraphicsGetImageFromCurrentImageContext()
+                UIGraphicsEndImageContext()
+                return result
+            }
+        }
+}// end image ext
+
+extension UIView {
+    
+    func startRotating(duration: CFTimeInterval = 3, repeatCount: Float = Float.infinity, clockwise: Bool = true) {
+        
+        if self.layer.animation(forKey: "transform.rotation.z") != nil {
+            return
+        }
+        
+        let animation = CABasicAnimation(keyPath: "transform.rotation.z")
+        let direction = clockwise ? 1.0 : -1.0
+        animation.toValue = NSNumber(value: .pi * 2 * direction)
+        animation.duration = duration
+        animation.isCumulative = true
+        animation.repeatCount = repeatCount
+        self.layer.add(animation, forKey:"transform.rotation.z")
+    }
+    
+    func stopRotating() {
+        
+        self.layer.removeAnimation(forKey: "transform.rotation.z")
+        
+    }
+    
 }
 
