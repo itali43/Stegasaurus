@@ -15,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.1</string>
+	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>0</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -24,10 +24,10 @@
 	<string>Stegasaurus would like to access your Media Library.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Stegasaurus would like to use your camera.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Stegasaurus would like to access your photos.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>StegaSaurus would like to be able to add your steganographic images to your Photo Library.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Stegasaurus would like to access your photos.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -38,8 +38,6 @@
 	</array>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
-	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -53,5 +51,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>
