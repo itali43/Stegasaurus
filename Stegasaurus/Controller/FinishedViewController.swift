@@ -54,12 +54,12 @@ class FinishedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("OK..")
-        var encr =   encrypt(this: "Look at me!", with: "passthis")
-        print("ENCRY", encr)
-        var decry = decrypt(this: encr, with: "passthis")
-        print("DDDD", decry)
-        print("OK..")
+//        print("OK..")
+//        var encr =   encrypt(this: "Look at me!", with: "passthis")
+//        print("ENCRY", encr)
+//        var decry = decrypt(this: encr, with: "passthis")
+//        print("DDDD", decry)
+//        print("OK..")
 //        rotationAnimation(buttonToRotate: loadingStega)
         loadingStega.startRotating(duration: CFTimeInterval(2), repeatCount: .infinity, clockwise: true)
 
