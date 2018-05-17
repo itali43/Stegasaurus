@@ -1,0 +1,24 @@
+PODS:
+  - IQKeyboardManagerSwift (6.0.3)
+  - ISStego (0.0.3)
+  - RNCryptor (5.0.3)
+
+DEPENDENCIES:
+  - IQKeyboardManagerSwift
+  - ISStego
+  - RNCryptor (~> 5.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - IQKeyboardManagerSwift
+    - ISStego
+    - RNCryptor
+
+SPEC CHECKSUMS:
+  IQKeyboardManagerSwift: 04e8679f85e496bb2c474eeb9284052f1b3c391c
+  ISStego: 40e538fdda4f7928cd62233101bec7176853a1c0
+  RNCryptor: c93d19029dcf7ff160aca0f24d6c9e7b0d82f664
+
+PODFILE CHECKSUM: 9eda6153f677e2125178b4ba51c936525bcfc169
+
+COCOAPODS: 1.5.0
