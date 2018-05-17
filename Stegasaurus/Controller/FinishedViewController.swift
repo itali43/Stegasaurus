@@ -10,7 +10,7 @@ import UIKit
 import ISStego
 import Foundation
 import Security
-import PromiseKit
+//import PromiseKit
 import RNCryptor
 
 

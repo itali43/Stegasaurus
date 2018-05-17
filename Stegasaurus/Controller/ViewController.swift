@@ -156,14 +156,29 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if let destinationViewController = segue.destination as? FinishedViewController {
-            destinationViewController.passedImage = imageToPass
+            let newImage = rotateImage(image: imageToPass)
+            destinationViewController.passedImage = newImage
             destinationViewController.passedTXN = messageToPass
-
         }
 
     }
 
-    
+    func rotateImage(image: UIImage) -> UIImage {
+        
+        if (image.imageOrientation == UIImageOrientation.up ) {
+            return image
+        }
+        
+        UIGraphicsBeginImageContext(image.size)
+        
+        image.draw(in: CGRect(origin: CGPoint.zero, size: image.size))
+        let copy = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        
+        return copy!
+    }
+
     
     
 
