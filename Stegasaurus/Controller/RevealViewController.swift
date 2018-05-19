@@ -48,6 +48,12 @@ class RevealViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBAction func sendTXNAction(_ sender: Any) {
         // activity monitor
         let vc = UIActivityViewController(activityItems: [txnToCopy], applicationActivities: [])
+        if let popoverController = vc.popoverPresentationController {
+            popoverController.sourceView = self.view
+            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+            popoverController.permittedArrowDirections = []
+        }
+
         present(vc, animated: true)
     }
     

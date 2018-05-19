@@ -19,7 +19,9 @@ struct STEGAlert {
     static func displayAlert(title: String, message: String, buttonLabel: String, fromController: UIViewController) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: buttonLabel, style: UIAlertActionStyle.default, handler: nil))
+
         fromController.present(alert, animated: true, completion: nil)
+
     }
     
     static func cameraOrLibrary(fromVC: UIViewController, andThen:@escaping ((CameraChoice)->())) {
@@ -39,6 +41,15 @@ struct STEGAlert {
         alertController.addAction(cameraButton)
         alertController.addAction(photoLibButton)
         alertController.addAction(cancelButton)
+
+        if let popoverController = alertController.popoverPresentationController {
+            popoverController.sourceView = fromVC.view
+            popoverController.sourceRect = CGRect(x: fromVC.view.bounds.midX, y: fromVC.view.bounds.midY, width: 0, height: 0)
+            popoverController.permittedArrowDirections = []
+
+        }
+
+
         fromVC.navigationController!.present(alertController, animated: true, completion: nil)
         
     }
