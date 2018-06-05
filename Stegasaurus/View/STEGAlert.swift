@@ -24,6 +24,17 @@ struct STEGAlert {
 
     }
     
+    static func displayAlertWithCompletion(title: String, message: String, buttonLabel: String, fromController: UIViewController, andThen: @escaping ()->Void) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: buttonLabel, style: UIAlertActionStyle.default, handler: { (action) -> Void in
+            andThen()
+        }))
+            fromController.present(alert, animated: true, completion: nil)
+
+    }
+
+    
+    
     static func cameraOrLibrary(fromVC: UIViewController, andThen:@escaping ((CameraChoice)->())) {
         let alertController = UIAlertController(title: "New or Old", message: "Would you like to take a new photo or use one previously taken?", preferredStyle: .actionSheet)
         let cameraButton = UIAlertAction(title: "Camera", style: .default, handler: { (action) -> Void in

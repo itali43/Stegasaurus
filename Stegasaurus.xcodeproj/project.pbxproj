@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F1C307720B3640C00C53529 /* Stego.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1C307620B3640C00C53529 /* Stego.swift */; };
 		4F21D812209E69E60086C8DD /* STEGAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F21D811209E69E60086C8DD /* STEGAlert.swift */; };
 		4FB23091209A937300DD7581 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB23090209A937300DD7581 /* StartViewController.swift */; };
 		4FB23093209A937E00DD7581 /* FinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB23092209A937E00DD7581 /* FinishedViewController.swift */; };
@@ -49,6 +50,7 @@
 		25B7E1031AF1BEFEE73A5AC2 /* Pods_Stegasaurus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stegasaurus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BAC382DBC74CFC107A38DD4 /* Pods-StegasaurusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StegasaurusUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StegasaurusUITests/Pods-StegasaurusUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4DC746EB1F505F37ECA29E46 /* Pods-StegasaurusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StegasaurusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StegasaurusTests/Pods-StegasaurusTests.release.xcconfig"; sourceTree = "<group>"; };
+		4F1C307620B3640C00C53529 /* Stego.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stego.swift; sourceTree = "<group>"; };
 		4F21D811209E69E60086C8DD /* STEGAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STEGAlert.swift; sourceTree = "<group>"; };
 		4FB23090209A937300DD7581 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		4FB23092209A937E00DD7581 /* FinishedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedViewController.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				4FDBE22C20A4D7350074533B /* Extensions.swift */,
 				4FCA9B912094FEB000BA8A96 /* Assets.xcassets */,
 				4FCA9B932094FEB000BA8A96 /* LaunchScreen.storyboard */,
+				4F1C307620B3640C00C53529 /* Stego.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				4FCA9B8B2094FEAE00BA8A96 /* AppDelegate.swift in Sources */,
 				4FCA9BB92094FED700BA8A96 /* Picto.swift in Sources */,
 				4FB23093209A937E00DD7581 /* FinishedViewController.swift in Sources */,
+				4F1C307720B3640C00C53529 /* Stego.swift in Sources */,
 				4FD1C5B420A0E68200E45947 /* PictographImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

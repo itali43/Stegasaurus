@@ -71,6 +71,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                     print("camera")
                     self.imagePicker.allowsEditing = false
                     self.self.imagePicker.sourceType = .camera
+
                     self.present(self.imagePicker, animated: true, completion: nil)
                 case .photoLibrary:
                     print("PL")

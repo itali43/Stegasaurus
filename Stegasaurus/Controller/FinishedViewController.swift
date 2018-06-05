@@ -12,13 +12,16 @@ import Foundation
 import Security
 //import PromiseKit
 import RNCryptor
+import MessageUI
 
 
-class FinishedViewController: UIViewController {
+
+class FinishedViewController: UIViewController, MFMailComposeViewControllerDelegate, UINavigationControllerDelegate {
     // image and transaction injection from previous VC
     var passedTXN = "---------"
     var passedImage: UIImage = #imageLiteral(resourceName: "Stegasaurus")
-    
+    let mailComposeVC = MFMailComposeViewController()
+
     // loading screen
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var loadingStega: UIButton!
@@ -42,24 +45,58 @@ class FinishedViewController: UIViewController {
     
     
     @IBOutlet weak var finishedText: UILabel!
+    
+    // mail controller ends
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        print("Finished composing, mail controller should be disappearing")
+        controller.dismiss(animated: true, completion: nil)
+    }
+
+    
+    
+    func composeMail() {
+        mailComposeVC.delegate = self
+        mailComposeVC.mailComposeDelegate = self
+
+        print("compose!")
+            mailComposeVC.addAttachmentData(UIImagePNGRepresentation(passedImage)!, mimeType: "image/png", fileName:  "image1.jpeg")
+            mailComposeVC.setSubject("Check this out!")
+            
+            mailComposeVC.setMessageBody("<html><body><p>Check out this picture! </p>   <p>Then check out http://stegasaurus.club</p></body></html>", isHTML: true)
+            
+            present(mailComposeVC, animated: true, completion: nil)
+
+        
+    } // end compose mail
+
+    
     @IBOutlet weak var sendBTN: UIButton!
     @IBAction func sendAction(_ sender: Any) {
 //        print(createAlphaNumericRandomString(length: 337))
-
-            let vc = UIActivityViewController(activityItems: [passedImage], applicationActivities: [])
-        if let popoverController = vc.popoverPresentationController {
-            popoverController.sourceView = self.view
-            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
-            popoverController.permittedArrowDirections = []
+        STEGAlert.displayAlertWithCompletion(title: "ACTUAL SIZE", message: "For now, you must set image to ACTUAL SIZE or the image will not send.  /n -StegaTeam", buttonLabel: "ACTUAL SIZE it is!", fromController: self) {
+            print("after the alert has gone")
+            self.composeMail()
         }
-
-            present(vc, animated: true)
+        
+        // activity controller send in any fashion
+//            let vc = UIActivityViewController(activityItems: [passedImage], applicationActivities: [])
+//        if let popoverController = vc.popoverPresentationController {
+//            popoverController.sourceView = self.view
+//            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+//            popoverController.permittedArrowDirections = []
+//        }
+//
+//            present(vc, animated: true)
 
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mailComposeVC.delegate = self
+        mailComposeVC.mailComposeDelegate = self
+
 //        print("OK..")
 //        var encr =   encrypt(this: "Look at me!", with: "passthis")
 //        print("ENCRY", encr)
@@ -165,7 +202,10 @@ class FinishedViewController: UIViewController {
                     print("error: \(anError)")
                 }
             } else {
-                self.passedImage =  UIImage(data: UIImagePNGRepresentation(image as! UIImage)!)!
+                let theImage = UIImage(data: UIImagePNGRepresentation(image as! UIImage)!)!
+//                let jpgTHEIMAGE = UIImage(data: UIImageJPEGRepresentation(theImage, 0.1)!)!
+
+                self.passedImage =  theImage
                 print("changed image")
                 andThen("done")
                 
