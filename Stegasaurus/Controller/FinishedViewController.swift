@@ -80,7 +80,7 @@ class FinishedViewController: UIViewController, MFMailComposeViewControllerDeleg
             mailComposeVC.addAttachmentData(UIImagePNGRepresentation(passedImage)!, mimeType: "image/png", fileName:  "image1.jpeg")
             mailComposeVC.setSubject("Check this out!")
             
-            mailComposeVC.setMessageBody("<html><body><p>Check out this picture! </p>   <p>Then check out http://new.stegasaurus.com</p></body></html>", isHTML: true)
+        mailComposeVC.setMessageBody("<html><body><p>Check out this picture: there's something hidden in it! </p>   <p>Get in the know, join Club Stegasaurus: http://new.stegasaurus.com</p></body></html>", isHTML: true)
             
             present(mailComposeVC, animated: true, completion: nil)
 
