@@ -20,7 +20,6 @@ class FinishedViewController: UIViewController, MFMailComposeViewControllerDeleg
     // image and transaction injection from previous VC
     var passedTXN = "---------"
     var passedImage: UIImage = #imageLiteral(resourceName: "Stegasaurus")
-    let mailComposeVC = MFMailComposeViewController()
 
     // loading screen
     @IBOutlet weak var loadingView: UIView!
@@ -49,12 +48,31 @@ class FinishedViewController: UIViewController, MFMailComposeViewControllerDeleg
     // mail controller ends
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         print("Finished composing, mail controller should be disappearing")
-        controller.dismiss(animated: true, completion: nil)
+        switch result {
+        case .cancelled:
+            print("Mail cancelled")
+        case .saved:
+            print("Mail saved")
+        case .sent:
+            print("Mail sent")
+        case .failed:
+            print("Mail sent failure: %@", [error?.localizedDescription])
+        default:
+            break
+        }
+        self.dismiss(animated: true, completion: nil)
+
+//        controller.dismiss(animated: true, completion: nil)
     }
 
     
     
     func composeMail() {
+        // have to create a new one every time ;)
+        let mailComposeVC = MFMailComposeViewController()
+        mailComposeVC.delegate = self
+        mailComposeVC.mailComposeDelegate = self
+
         mailComposeVC.delegate = self
         mailComposeVC.mailComposeDelegate = self
 
@@ -62,7 +80,7 @@ class FinishedViewController: UIViewController, MFMailComposeViewControllerDeleg
             mailComposeVC.addAttachmentData(UIImagePNGRepresentation(passedImage)!, mimeType: "image/png", fileName:  "image1.jpeg")
             mailComposeVC.setSubject("Check this out!")
             
-            mailComposeVC.setMessageBody("<html><body><p>Check out this picture! </p>   <p>Then check out http://stegasaurus.club</p></body></html>", isHTML: true)
+            mailComposeVC.setMessageBody("<html><body><p>Check out this picture! </p>   <p>Then check out http://new.stegasaurus.com</p></body></html>", isHTML: true)
             
             present(mailComposeVC, animated: true, completion: nil)
 
@@ -94,8 +112,6 @@ class FinishedViewController: UIViewController, MFMailComposeViewControllerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mailComposeVC.delegate = self
-        mailComposeVC.mailComposeDelegate = self
 
 //        print("OK..")
 //        var encr =   encrypt(this: "Look at me!", with: "passthis")
@@ -260,6 +276,14 @@ class FinishedViewController: UIViewController, MFMailComposeViewControllerDeleg
         return alphaNumericRandomString
     }
 
+    //for keyboard
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+        // This function makes it so that if you tap outside of the keyboard it will disappear.
+    }
+
+    
+    
     
     // loading Animation (spinning stega!)
 //     func rotationAnimation(buttonToRotate: UIButton) {
