@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		4F1C307720B3640C00C53529 /* Stego.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1C307620B3640C00C53529 /* Stego.swift */; };
 		4F21D812209E69E60086C8DD /* STEGAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F21D811209E69E60086C8DD /* STEGAlert.swift */; };
+		4F2AEF5C2107B071003A3C78 /* trial.js in Resources */ = {isa = PBXBuildFile; fileRef = 4F2AEF5B2107B071003A3C78 /* trial.js */; };
+		4F2AEF5E2107B114003A3C78 /* TrailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2AEF5D2107B114003A3C78 /* TrailViewController.swift */; };
+		4F2AEF602107BAA2003A3C78 /* Demo.html in Resources */ = {isa = PBXBuildFile; fileRef = 4F2AEF5F2107BAA2003A3C78 /* Demo.html */; };
 		4FB23091209A937300DD7581 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB23090209A937300DD7581 /* StartViewController.swift */; };
 		4FB23093209A937E00DD7581 /* FinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB23092209A937E00DD7581 /* FinishedViewController.swift */; };
 		4FCA9B8B2094FEAE00BA8A96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA9B8A2094FEAE00BA8A96 /* AppDelegate.swift */; };
@@ -52,6 +55,9 @@
 		4DC746EB1F505F37ECA29E46 /* Pods-StegasaurusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StegasaurusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StegasaurusTests/Pods-StegasaurusTests.release.xcconfig"; sourceTree = "<group>"; };
 		4F1C307620B3640C00C53529 /* Stego.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stego.swift; sourceTree = "<group>"; };
 		4F21D811209E69E60086C8DD /* STEGAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STEGAlert.swift; sourceTree = "<group>"; };
+		4F2AEF5B2107B071003A3C78 /* trial.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = trial.js; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
+		4F2AEF5D2107B114003A3C78 /* TrailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailViewController.swift; sourceTree = "<group>"; };
+		4F2AEF5F2107BAA2003A3C78 /* Demo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Demo.html; sourceTree = "<group>"; };
 		4FB23090209A937300DD7581 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		4FB23092209A937E00DD7581 /* FinishedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedViewController.swift; sourceTree = "<group>"; };
 		4FCA9B872094FEAE00BA8A96 /* Stegasaurus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stegasaurus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				4FB23090209A937300DD7581 /* StartViewController.swift */,
+				4F2AEF5D2107B114003A3C78 /* TrailViewController.swift */,
 				4FCA9B8C2094FEAE00BA8A96 /* ViewController.swift */,
 				4FB23092209A937E00DD7581 /* FinishedViewController.swift */,
 				4FE0FEF120A2B38600FB9407 /* RevealViewController.swift */,
@@ -211,6 +218,8 @@
 		4FDBE23220A4EEBF0074533B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4F2AEF5B2107B071003A3C78 /* trial.js */,
+				4F2AEF5F2107BAA2003A3C78 /* Demo.html */,
 				4FDBE22C20A4D7350074533B /* Extensions.swift */,
 				4FCA9B912094FEB000BA8A96 /* Assets.xcassets */,
 				4FCA9B932094FEB000BA8A96 /* LaunchScreen.storyboard */,
@@ -241,6 +250,7 @@
 				4FCA9B842094FEAE00BA8A96 /* Frameworks */,
 				4FCA9B852094FEAE00BA8A96 /* Resources */,
 				0F9CF9EDDFF4E64A971A0676 /* [CP] Embed Pods Frameworks */,
+				BFE087C5D7B4EF09A0923333 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -259,6 +269,8 @@
 				4FCA9B972094FEB000BA8A96 /* Sources */,
 				4FCA9B982094FEB000BA8A96 /* Frameworks */,
 				4FCA9B992094FEB000BA8A96 /* Resources */,
+				661B2BC3D27EDF514CACDAF8 /* [CP] Embed Pods Frameworks */,
+				D5A46B25D115A35656571422 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -278,6 +290,8 @@
 				4FCA9BA22094FEB000BA8A96 /* Sources */,
 				4FCA9BA32094FEB000BA8A96 /* Frameworks */,
 				4FCA9BA42094FEB000BA8A96 /* Resources */,
+				EC2F671B6E781AA1930EFCED /* [CP] Embed Pods Frameworks */,
+				325F8EE2CFED33CAF4B34AB8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -338,8 +352,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FCA9B952094FEB000BA8A96 /* LaunchScreen.storyboard in Resources */,
+				4F2AEF602107BAA2003A3C78 /* Demo.html in Resources */,
 				4FCA9B922094FEB000BA8A96 /* Assets.xcassets in Resources */,
 				4FCA9B902094FEAE00BA8A96 /* Main.storyboard in Resources */,
+				4F2AEF5C2107B071003A3C78 /* trial.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,16 +386,48 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ISStego/ISStego.framework",
 				"${BUILT_PRODUCTS_DIR}/RNCryptor/RNCryptor.framework",
+				"${BUILT_PRODUCTS_DIR}/WKWebViewJavascriptBridge/WKWebViewJavascriptBridge.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ISStego.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNCryptor.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WKWebViewJavascriptBridge.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stegasaurus/Pods-Stegasaurus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		325F8EE2CFED33CAF4B34AB8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StegasaurusUITests/Pods-StegasaurusUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		661B2BC3D27EDF514CACDAF8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StegasaurusTests/Pods-StegasaurusTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		95B81E1BA42DA47CB3A05FED /* [CP] Check Pods Manifest.lock */ = {
@@ -418,6 +466,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		BFE087C5D7B4EF09A0923333 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stegasaurus/Pods-Stegasaurus-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C39BCDE493FF86F237BBB89D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -436,6 +499,36 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D5A46B25D115A35656571422 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StegasaurusTests/Pods-StegasaurusTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC2F671B6E781AA1930EFCED /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StegasaurusUITests/Pods-StegasaurusUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -449,6 +542,7 @@
 				4FB23091209A937300DD7581 /* StartViewController.swift in Sources */,
 				4FE0FEF220A2B38600FB9407 /* RevealViewController.swift in Sources */,
 				4FCA9B8B2094FEAE00BA8A96 /* AppDelegate.swift in Sources */,
+				4F2AEF5E2107B114003A3C78 /* TrailViewController.swift in Sources */,
 				4FCA9BB92094FED700BA8A96 /* Picto.swift in Sources */,
 				4FB23093209A937E00DD7581 /* FinishedViewController.swift in Sources */,
 				4F1C307720B3640C00C53529 /* Stego.swift in Sources */,
